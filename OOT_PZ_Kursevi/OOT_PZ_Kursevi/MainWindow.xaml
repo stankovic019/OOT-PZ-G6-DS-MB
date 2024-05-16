@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Kursevi" Height="720" Width="1280" WindowStartupLocation="CenterScreen">
 
-    <!-- Glavno pitanje: 1280x720 rezolucija ILI full screen -->
+    <!-- Glavno pitanje: 1280x720 rezolucija ili FULL screen -->
     
     <Border Padding="10">
         <TabControl Grid.Row="0">
