@@ -18,9 +18,7 @@
             <TabItem Header="Dostupni kursevi">
                 <TextBlock Text="Neki tekst"/>
             </TabItem>
-            <TabItem Header="Izaberi kurs i prijavi se"></TabItem>
-
-            <TabItem Header="Dostupni kursevi"></TabItem>
+           
             <TabItem Header="Izaberi kurs i prijavi se">CAOO</TabItem>
 
             <TabItem Header="Upravljaj kursevima"></TabItem>
