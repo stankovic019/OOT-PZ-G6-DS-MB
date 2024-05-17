@@ -5,18 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OOT_PZ_Kursevi"
         mc:Ignorable="d"
+
         Title="Kursevi" Height="1080" Width="1920"
         WindowState="Maximized" WindowStartupLocation="CenterScreen">
+
 
     <!-- Glavno pitanje: 1280x720 rezolucija ili FULL screen -->
     
     <Border Padding="10">
         <TabControl Grid.Row="0">
+
             <TabItem Header="Dostupni kursevi">
                 <TextBlock Text="Neki tekst"/>
             </TabItem>
             <TabItem Header="Izaberi kurs i prijavi se"></TabItem>
+
+            <TabItem Header="Dostupni kursevi"></TabItem>
+            <TabItem Header="Izaberi kurs i prijavi se">CAOO</TabItem>
+
             <TabItem Header="Upravljaj kursevima"></TabItem>
+            
         </TabControl>
     </Border>
 </Window>
