@@ -12,8 +12,9 @@
     <Border Padding="10">
         <TabControl Grid.Row="0">
             <TabItem Header="Dostupni kursevi"></TabItem>
-            <TabItem Header="Izaberi kurs i prijavi se"></TabItem>
+            <TabItem Header="Izaberi kurs i prijavi se">CAOO</TabItem>
             <TabItem Header="Upravljaj kursevima"></TabItem>
+            
         </TabControl>
     </Border>
 </Window>
