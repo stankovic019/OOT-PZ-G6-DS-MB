@@ -40,3 +40,4 @@ C:\Users\janko\OneDrive\Dokumenti\GitHub\OOT-PZ-G6-DS-MB\OOT_PZ_Kursevi\OOT_PZ_K
 C:\Users\janko\OneDrive\Dokumenti\GitHub\OOT-PZ-G6-DS-MB\OOT_PZ_Kursevi\OOT_PZ_Kursevi\obj\Debug\net8.0-windows\OOT_PZ_Kursevi.pdb
 C:\Users\janko\OneDrive\Dokumenti\GitHub\OOT-PZ-G6-DS-MB\OOT_PZ_Kursevi\OOT_PZ_Kursevi\obj\Debug\net8.0-windows\OOT_PZ_Kursevi.genruntimeconfig.cache
 C:\Users\janko\OneDrive\Dokumenti\GitHub\OOT-PZ-G6-DS-MB\OOT_PZ_Kursevi\OOT_PZ_Kursevi\obj\Debug\net8.0-windows\ref\OOT_PZ_Kursevi.dll
+C:\Users\Dimitrije\Documents\GitHub\OOT-PZ-G6-DS-MB\OOT_PZ_Kursevi\OOT_PZ_Kursevi\bin\Debug\net8.0-windows\photos\noIcon.png
