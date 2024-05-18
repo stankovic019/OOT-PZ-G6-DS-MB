@@ -38,6 +38,10 @@ namespace OOT_PZ_Kursevi
 
         }
 
-       
+        private void dodajKurs(object sender, RoutedEventArgs e)
+        {
+            Dodaj novi = new Dodaj();
+            novi.ShowDialog();
+        }
     }
 }

@@ -1,0 +1,84 @@
+﻿<Window x:Class="OOT_PZ_Kursevi.Dodaj"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOT_PZ_Kursevi"
+        mc:Ignorable="d"
+        Title="Dodaj kurs" Height="430" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Border Padding="10">
+
+        <StackPanel>
+            <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <TextBlock Grid.Row="0" Grid.ColumnSpan="2" Text="DODAJ NOVI KURS" FontSize="26" FontWeight="Bold"
+                       VerticalAlignment="Center" HorizontalAlignment="Center" FontStyle="Italic"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Jedinstveni ID:" FontSize="16" FontWeight="DemiBold" VerticalAlignment="Center" />
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="5 5" FontSize="16" VerticalAlignment="Center" x:Name="IDtb"/>
+
+            
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Naziv kursa:" FontSize="16" FontWeight="DemiBold" VerticalAlignment="Center" />
+            <TextBox Grid.Row="3" Grid.ColumnSpan="2" Margin="5 5" FontSize="16" VerticalAlignment="Center" x:Name="Nazivtb"/>
+            
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Kratak opis:" FontSize="16" FontWeight="DemiBold" VerticalAlignment="Center" />
+            <TextBox Grid.Row="5" Grid.ColumnSpan="2" Margin="5 5" FontSize="16" VerticalAlignment="Center" x:Name="Opistb"/>
+
+            <TextBlock Grid.Row="6" Grid.Column="0" Text="Cena kursa (RSD):" FontSize="16" FontWeight="DemiBold" VerticalAlignment="Center" />
+            <TextBox Grid.Row="6" Grid.Column="1" Margin="5 5" FontSize="16" VerticalAlignment="Center" x:Name="Cenatb"/>
+            
+            <TextBlock Grid.Row="7" Grid.Column="0" Text="Trenutno dostupan:" FontSize="16" FontWeight="DemiBold" VerticalAlignment="Center" />
+            <Grid Grid.Row="7" Grid.Column="1">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                    <RadioButton Grid.Column="0" VerticalAlignment="Center"  Content="Da" FontSize="15" x:Name="DostupanRB" BorderBrush="Green" />
+                    <RadioButton Grid.Column="1" VerticalAlignment="Center"  Content="Ne" FontSize="15" x:Name="NedostupanRB" BorderBrush="Red"   />
+
+            </Grid>
+            
+            <TextBlock Grid.Row="8" Grid.Column="0" Text="Kategorija:" FontSize="16" FontWeight="DemiBold" VerticalAlignment="Center" />
+            <ComboBox Grid.Row="8" Grid.Column="1" Margin="5 5" FontSize="16" VerticalAlignment="Center" x:Name="KategorijeCB"/>
+            
+            <TextBlock Grid.Row="9" Grid.Column="0" Text="Ikonica kursa:" FontSize="16" VerticalAlignment="Center" />
+            <TextBox Grid.Row="10" Grid.Column="0" Margin="5 5" FontSize="16" VerticalAlignment="Center" x:Name="Ikonicatb" IsReadOnly="True"/>
+            <Button Grid.Row="10" Grid.Column="1" Content="Browse" Margin="5 10" FontSize="16" Click="browse"/>
+
+            <Button Grid.Row="11" Grid.ColumnSpan="2" Margin="10 5" Content="DODAJ KURS" FontWeight="DemiBold" FontSize="18"
+                    Click="dodaj"/>
+
+
+
+
+
+        </Grid>
+
+          </StackPanel>
+        
+        
+    </Border>
+</Window>

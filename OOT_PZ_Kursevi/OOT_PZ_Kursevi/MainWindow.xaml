@@ -135,7 +135,8 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
-                        <Button Grid.Column="0" Margin="20 15" Content="DODAJ KURS" FontWeight="DemiBold"/>
+                        <Button Grid.Column="0" Margin="20 15" Content="DODAJ KURS" FontWeight="DemiBold"
+                                x:Name="dodajKursB" Click="dodajKurs"/>
                         <Button Grid.Column="1" Margin="20 15" Content="IZMENI KURS" FontWeight="DemiBold"/>
                         <Button Grid.Column="2" Margin="20 15" Content="IZBRIŠI KURS" FontWeight="DemiBold"/>
 
