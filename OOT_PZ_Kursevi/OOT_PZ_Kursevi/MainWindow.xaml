@@ -7,22 +7,148 @@
         mc:Ignorable="d"
 
         Title="Kursevi" Height="1080" Width="1920"
-        WindowState="Maximized" WindowStartupLocation="CenterScreen">
+        WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
 
 
     <!-- Glavno pitanje: 1280x720 rezolucija ili FULL screen -->
-    
+
     <Border Padding="10">
-        <TabControl Grid.Row="0">
+
+        <TabControl FontSize="16">
 
             <TabItem Header="Dostupni kursevi">
-                <TextBlock Text="Neki tekst"/>
+
+
+
+                <Grid Margin="20 20 20 20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="0.5*"/>
+                    </Grid.RowDefinitions>
+
+
+                    <Grid Grid.Row="0">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.1*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="DOSTUPNI KURSEVI" FontWeight="Bold" FontSize="26" Grid.Row="0" FontStyle="Italic"/>
+
+
+
+                        <DataGrid x:Name="dostupniKurseviDGV" IsReadOnly="True" GridLinesVisibility="Horizontal" 
+                                        AutoGenerateColumns="False" Grid.Row="1" Margin="0 0 0 20" AlternationCount="2"
+                                        VerticalContentAlignment="Center">
+                            
+                            <DataGrid.Columns>
+                                
+                                <DataGridTemplateColumn x:Name="IconHeaderD"  Header="" CanUserResize="False">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Path=Slika}" Width="40" Height="40"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTextColumn Header="Naziv" Binding="{Binding Path=Naziv}"/>
+                                <DataGridTextColumn Header="Kategorija" Binding="{Binding Path=Kategorija}"/>
+                                <DataGridTextColumn Header="Cena kursa" Binding="{Binding Path=Cena}"/>
+                                <DataGridTextColumn Header="Opis" Binding="{Binding Path=Opis}" Width="*"/>
+                            </DataGrid.Columns>
+
+
+
+                            <DataGrid.RowStyle>
+
+                                <Style TargetType="{x:Type DataGridRow}">
+                                    <Style.Triggers>
+                                        <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                                            <Setter Property="Background" Value="White"/>
+                                        </Trigger>
+                                        <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                                            <Setter Property="Background" Value="#FFBFE2B7"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </DataGrid.RowStyle>
+                        </DataGrid>
+                    </Grid>
+
+                    <Grid Grid.Row="1">
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.15*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Text="NEDOSTUPNI KURSEVI" FontWeight="Bold" FontSize="26" Grid.Row="0" FontStyle="Italic"/>
+
+                        <DataGrid x:Name="nedostupniKurseviDGV" IsReadOnly="True" GridLinesVisibility="Horizontal" 
+                                 AutoGenerateColumns="False" Grid.Row="1" Margin="0 0 0 20" AlternationCount="2">
+
+
+                            <DataGrid.Columns>
+                                
+                                <DataGridTemplateColumn x:Name="IconHeaderN"  Header="" CanUserResize="False">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Image Source="{Binding Path=Slika}" Width="40" Height="40"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                
+                                <DataGridTextColumn Header="Naziv" Binding="{Binding Path=Naziv}"/>
+                                <DataGridTextColumn Header="Kategorija" Binding="{Binding Path=Kategorija}"/>
+                                <DataGridTextColumn Header="Cena kursa" Binding="{Binding Path=Cena}"/>
+                                <DataGridTextColumn Header="Opis" Binding="{Binding Path=Opis}"/>
+                            </DataGrid.Columns>
+
+                            <DataGrid.RowStyle>
+                                <Style TargetType="{x:Type DataGridRow}">
+                                    <Style.Triggers>
+                                        <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                                            <Setter Property="Background" Value="White"/>
+                                        </Trigger>
+                                        <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                                            <Setter Property="Background" Value="#FFE2B1B1"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </DataGrid.RowStyle>
+
+                        </DataGrid>
+
+                    </Grid>
+
+                    <Grid Grid.Row="2">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Grid.Column="0" Margin="20 15" Content="DODAJ KURS" FontWeight="DemiBold"/>
+                        <Button Grid.Column="1" Margin="20 15" Content="IZMENI KURS" FontWeight="DemiBold"/>
+                        <Button Grid.Column="2" Margin="20 15" Content="IZBRIŠI KURS" FontWeight="DemiBold"/>
+
+
+
+                    </Grid>
+
+
+                </Grid>
+
             </TabItem>
-           
+
             <TabItem Header="Izaberi kurs i prijavi se">CAOO</TabItem>
 
             <TabItem Header="Upravljaj kursevima"></TabItem>
-            
+
         </TabControl>
+
     </Border>
 </Window>

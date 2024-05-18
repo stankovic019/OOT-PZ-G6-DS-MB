@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|c:\\users\\dimitrije\\documents\\github\\oot-pz-g6-ds-mb\\oot_pz_kursevi\\oot_pz_kursevi\\kurs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|solutionrelative:oot_pz_kursevi\\kurs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|c:\\users\\dimitrije\\documents\\github\\oot-pz-g6-ds-mb\\oot_pz_kursevi\\oot_pz_kursevi\\kategorija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|solutionrelative:oot_pz_kursevi\\kategorija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|c:\\users\\dimitrije\\documents\\github\\oot-pz-g6-ds-mb\\oot_pz_kursevi\\oot_pz_kursevi\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|solutionrelative:oot_pz_kursevi\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|c:\\users\\dimitrije\\documents\\github\\oot-pz-g6-ds-mb\\oot_pz_kursevi\\oot_pz_kursevi\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|solutionrelative:oot_pz_kursevi\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|c:\\users\\dimitrije\\documents\\github\\oot-pz-g6-ds-mb\\oot_pz_kursevi\\oot_pz_kursevi\\kurs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|solutionrelative:oot_pz_kursevi\\kurs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,56 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Kurs.cs",
               "DocumentMoniker": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\Kurs.cs",
               "RelativeDocumentMoniker": "OOT_PZ_Kursevi\\Kurs.cs",
               "ToolTip": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\Kurs.cs",
               "RelativeToolTip": "OOT_PZ_Kursevi\\Kurs.cs",
-              "ViewState": "AQIAAEMAAAAAAAAAAAAWwGUAAAA8AAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAApwBkAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-18T00:07:03.307Z",
+              "WhenOpened": "2024-05-18T01:49:21.613Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Kategorija.cs",
-              "DocumentMoniker": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\Kategorija.cs",
-              "RelativeDocumentMoniker": "OOT_PZ_Kursevi\\Kategorija.cs",
-              "ToolTip": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\Kategorija.cs",
-              "RelativeToolTip": "OOT_PZ_Kursevi\\Kategorija.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAswFMAAAASAAAA",
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "OOT_PZ_Kursevi\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\MainWindow.xaml.cs",
+              "RelativeToolTip": "OOT_PZ_Kursevi\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAlwBcAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-17T23:54:02.997Z",
+              "WhenOpened": "2024-05-18T01:14:48.807Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\MainWindow.xaml",
               "RelativeDocumentMoniker": "OOT_PZ_Kursevi\\MainWindow.xaml",
               "ToolTip": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\MainWindow.xaml",
               "RelativeToolTip": "OOT_PZ_Kursevi\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-16T18:29:06.943Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "OOT_PZ_Kursevi\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\MainWindow.xaml.cs",
-              "RelativeToolTip": "OOT_PZ_Kursevi\\MainWindow.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-16T18:29:05.488Z"
+              "WhenOpened": "2024-05-18T01:14:47.99Z",
+              "EditorCaption": ""
             }
           ]
         }
