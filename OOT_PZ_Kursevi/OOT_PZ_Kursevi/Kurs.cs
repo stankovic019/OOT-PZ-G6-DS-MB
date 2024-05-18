@@ -17,19 +17,21 @@ namespace OOT_PZ_Kursevi
         private string opis;
         private double cena;
         private string slikaPath;
-
+        private int kategorijaID; //potrebno je zapamtiti u kojoj kategoriji pripada kurs
         public event PropertyChangedEventHandler PropertyChanged;
 
         #endregion
 
         #region KONSTRUKTOR
-        public Kurs(int id, string naziv, string opis, double cena, string slikaPath)
+        public Kurs(int id, string naziv, string opis, double cena, string slikaPath, int kategorijaID)
         {
             this.id = id;
             this.naziv = naziv;
             this.opis = opis;
             this.cena = cena;
             this.slikaPath = slikaPath;
+            this.kategorijaID = kategorijaID;
+
             //verovatno kasnije treba dodati ocitavanje slike
         }
         #endregion
@@ -85,6 +87,19 @@ namespace OOT_PZ_Kursevi
                 {
                     this.slikaPath = value;
                     this.NotifyPropertyChanged("SlikaPath");
+                }
+            }
+        }
+
+        public int KategorijaID
+        {
+            get { return kategorijaID; }
+            set
+            {
+                if (this.kategorijaID != value)
+                {
+                    this.kategorijaID = value;
+                    this.NotifyPropertyChanged("KategorijaID");
                 }
             }
         }
