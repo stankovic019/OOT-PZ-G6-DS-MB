@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 using System.Diagnostics;
 using System.IO;
+using System.Windows.Media;
+using System.Windows.Controls;
 
 namespace OOT_PZ_Kursevi
 {
@@ -98,6 +100,14 @@ namespace OOT_PZ_Kursevi
                 if (this.slikaPath != value)
                 {
                     this.slikaPath = value;
+                    this.slika = new BitmapImage();
+                    this.slika.BeginInit();
+
+                    if (!File.Exists(slikaPath))
+                        slikaPath = System.IO.Path.GetFullPath("photos\\noIcon.png");
+
+                    this.slika.UriSource = new Uri(slikaPath, UriKind.RelativeOrAbsolute);
+                    this.slika.EndInit();
                     this.NotifyPropertyChanged("SlikaPath");
                 }
             }
@@ -116,7 +126,24 @@ namespace OOT_PZ_Kursevi
             }
         }
 
-        public BitmapImage Slika { get { return slika; } }
+        public BitmapImage Slika { get {return this.slika; } }
+
+        public FormatConvertedBitmap BWSlika
+        {
+            get
+            {
+                FormatConvertedBitmap newFormatedBitmapSource = new FormatConvertedBitmap();
+                newFormatedBitmapSource.BeginInit();
+                newFormatedBitmapSource.Source = this.slika;
+                newFormatedBitmapSource.DestinationFormat = PixelFormats.Gray32Float;
+                newFormatedBitmapSource.EndInit();
+
+                return newFormatedBitmapSource;
+            }
+        }
+      
+
+
         #endregion
 
         #region METODE

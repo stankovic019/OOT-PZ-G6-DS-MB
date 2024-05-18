@@ -22,21 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Kurs.cs",
-              "DocumentMoniker": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\Kurs.cs",
-              "RelativeDocumentMoniker": "OOT_PZ_Kursevi\\Kurs.cs",
-              "ToolTip": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\Kurs.cs",
-              "RelativeToolTip": "OOT_PZ_Kursevi\\Kurs.cs",
-              "ViewState": "AQIAAAUAAAAAAAAAAAApwBkAAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-18T01:49:21.613Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -45,9 +32,9 @@
               "RelativeDocumentMoniker": "OOT_PZ_Kursevi\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\MainWindow.xaml.cs",
               "RelativeToolTip": "OOT_PZ_Kursevi\\MainWindow.xaml.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAlwBcAAAAbAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-18T01:14:48.807Z",
+              "WhenOpened": "2024-05-18T04:20:49.233Z",
               "EditorCaption": ""
             },
             {
@@ -59,7 +46,20 @@
               "ToolTip": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\MainWindow.xaml",
               "RelativeToolTip": "OOT_PZ_Kursevi\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-18T01:14:47.99Z",
+              "WhenOpened": "2024-05-18T04:20:46.7Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Kurs.cs",
+              "DocumentMoniker": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\Kurs.cs",
+              "RelativeDocumentMoniker": "OOT_PZ_Kursevi\\Kurs.cs",
+              "ToolTip": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\Kurs.cs",
+              "RelativeToolTip": "OOT_PZ_Kursevi\\Kurs.cs",
+              "ViewState": "AQIAAHYAAAAAAAAAAAAwwIcAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-18T01:49:21.613Z",
               "EditorCaption": ""
             }
           ]

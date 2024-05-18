@@ -44,9 +44,6 @@ namespace OOT_PZ_Kursevi
 
         }
 
-        private void dostupniKurseviDGV_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
-        {
-
-        }
+       
     }
 }
