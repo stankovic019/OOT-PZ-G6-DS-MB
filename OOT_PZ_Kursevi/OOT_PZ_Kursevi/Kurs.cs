@@ -53,7 +53,9 @@ namespace OOT_PZ_Kursevi
 
         #region PROPERTY
         public int getId() { return id; }  //id je jedinstven sto znaci da ne moze da se ponovo setuje van konstruktora
-                                           //kao geter metoda je da se ne bi mesao sa propertijima
+                                            //kao geter metoda je da se ne bi mesao sa propertijima
+
+        public int ID { get { return id; } }
         public string Naziv
         {
             get { return naziv; }
@@ -164,6 +166,14 @@ namespace OOT_PZ_Kursevi
         {
             if (this.PropertyChanged != null)
                 this.PropertyChanged(this, new PropertyChangedEventArgs(v));
+        }
+
+       public string toDat()
+        {
+            string str = this.id.ToString() + ":;:" + this.naziv + ":;:" + this.opis + ":;:" + this.cena.ToString() + ":;:"
+                         + this.slikaPath + ":;:" + this.kategorija + ":;:" + this.dostupan.ToString() + "\r\n";
+
+            return str;
         }
 
 

@@ -1,2 +1,4 @@
-1:;:prviKurs:;:Nema opisa:;:42069:;:noIcon:;:kategorija1:;:true
-2:;:drugiKurs:;:Opisa bez:;:69420:;:noIcon:;:kategorija2:;:false
+1:;:prviKurs:;:Nema opisa:;:42069:;::;:Predavanja:;:true
+2:;:drugiKurs:;:Opisa bez:;:69420:;:noIcon:;:Vezbe:;:false
+3:;:treciiKurs:;:Nema opisa:;:42069:;:noIcon:;:Seminar:;:true
+4:;:cetvrtiKurs:;:Opisa bez:;:69420:;:noIcon:;:Praksa:;:false

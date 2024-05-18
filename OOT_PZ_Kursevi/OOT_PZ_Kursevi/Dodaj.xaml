@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OOT_PZ_Kursevi"
         mc:Ignorable="d"
-        Title="Dodaj kurs" Height="430" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Dodaj kurs" Height="430" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Closed="Window_Closed">
     <Border Padding="10">
 
         <StackPanel>
@@ -36,10 +36,21 @@
                        VerticalAlignment="Center" HorizontalAlignment="Center" FontStyle="Italic"/>
 
             <TextBlock Grid.Row="1" Grid.Column="0" Text="Jedinstveni ID:" FontSize="16" FontWeight="DemiBold" VerticalAlignment="Center" />
-            <TextBox Grid.Row="1" Grid.Column="1" Margin="5 5" FontSize="16" VerticalAlignment="Center" x:Name="IDtb"/>
+                <Grid Grid.Row="1" Grid.Column="1">
 
-            
-            <TextBlock Grid.Row="2" Grid.Column="0" Text="Naziv kursa:" FontSize="16" FontWeight="DemiBold" VerticalAlignment="Center" />
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBox Grid.Column="0" Margin="5 5" FontSize="16" VerticalAlignment="Center" x:Name="IDtb"/>
+                    <Button Grid.Column="1" Margin="10 5" FontSize="16" Content="AUTO ID" Click="autoID"/>
+
+                </Grid>
+
+
+
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Naziv kursa:" FontSize="16" FontWeight="DemiBold" VerticalAlignment="Center" />
             <TextBox Grid.Row="3" Grid.ColumnSpan="2" Margin="5 5" FontSize="16" VerticalAlignment="Center" x:Name="Nazivtb"/>
             
             <TextBlock Grid.Row="4" Grid.Column="0" Text="Kratak opis:" FontSize="16" FontWeight="DemiBold" VerticalAlignment="Center" />

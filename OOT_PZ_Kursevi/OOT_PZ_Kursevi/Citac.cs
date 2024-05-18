@@ -22,6 +22,9 @@ namespace OOT_PZ_Kursevi
 
             string sadrzajDatoteke = File.ReadAllText(@"datoteke\kursevi.dat");
 
+            if (sadrzajDatoteke == "")
+                return kursevi;
+
             string[] podeliRedove = sadrzajDatoteke.Split("\r\n"); // \r\n je Windows nacin za pamcenje novog reda
 
             foreach (string line in podeliRedove)
@@ -29,14 +32,28 @@ namespace OOT_PZ_Kursevi
                 string[] polja = line.Split(":;:");
 
                 Kurs k = new Kurs(Convert.ToInt32(polja[0]), polja[1], polja[2], Convert.ToDouble(polja[3]), polja[4], polja[5],
-                                  (polja[6] == "true" ? true : false));
+                                  (polja[6].ToLower() == "true" ? true : false));
 
                 if (!kursevi.ContainsKey(k.getId()))
                     kursevi.Add(k.getId(), k);
+                else
+                    propertyChange(kursevi[k.ID], k);
+                
             }
 
             return kursevi;
         }
+
+        private void propertyChange(Kurs stari, Kurs novi)
+        {
+            stari.Naziv = novi.Naziv;
+            stari.Opis = novi.Opis;
+            stari.Cena = novi.Cena;
+            stari.SlikaPath = novi.SlikaPath;
+            stari.Kategorija = novi.Kategorija;
+            stari.Dostupan = novi.Dostupan;
+        }
+
 
         public ObservableCollection<Kurs> KursToObservableColection(bool dostupan)
         {
@@ -69,6 +86,8 @@ namespace OOT_PZ_Kursevi
 
             return kategorije;
         }
+
+        
 
 
     }

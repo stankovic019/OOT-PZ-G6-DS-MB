@@ -45,3 +45,5 @@ C:\Users\Dimitrije\Documents\GitHub\OOT-PZ-G6-DS-MB\OOT_PZ_Kursevi\OOT_PZ_Kursev
 C:\Users\Dimitrije\Documents\GitHub\OOT-PZ-G6-DS-MB\OOT_PZ_Kursevi\OOT_PZ_Kursevi\bin\Debug\net8.0-windows\datoteke\kursevi.dat
 C:\Users\Dimitrije\Documents\GitHub\OOT-PZ-G6-DS-MB\OOT_PZ_Kursevi\OOT_PZ_Kursevi\obj\Debug\net8.0-windows\Dodaj.g.cs
 C:\Users\Dimitrije\Documents\GitHub\OOT-PZ-G6-DS-MB\OOT_PZ_Kursevi\OOT_PZ_Kursevi\obj\Debug\net8.0-windows\Dodaj.baml
+C:\Users\Dimitrije\Documents\GitHub\OOT-PZ-G6-DS-MB\OOT_PZ_Kursevi\OOT_PZ_Kursevi\obj\Debug\net8.0-windows\Izmeni.g.cs
+C:\Users\Dimitrije\Documents\GitHub\OOT-PZ-G6-DS-MB\OOT_PZ_Kursevi\OOT_PZ_Kursevi\obj\Debug\net8.0-windows\Izmeni.baml
