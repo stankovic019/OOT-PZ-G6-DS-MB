@@ -10,7 +10,6 @@
         WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
 
 
-    <!-- Glavno pitanje: 1280x720 rezolucija ili FULL screen -->
 
     <Border Padding="10">
 
@@ -18,24 +17,26 @@
 
             <TabItem Header="Dostupni kursevi">
 
-
-
                 <Grid Margin="20 20 20 20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"/>
+                        <ColumnDefinition Width="0.2*" />
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="3*"/>
-                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="5*"/>
                         <RowDefinition Height="0.5*"/>
                     </Grid.RowDefinitions>
-
-
-                    <Grid Grid.Row="0">
-
+                    
+                    <Grid Grid.Column="0" Grid.Row="0">
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="0.1*"/>
+                            <RowDefinition Height="0.07*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <TextBlock Text="DOSTUPNI KURSEVI" FontWeight="Bold" FontSize="26" Grid.Row="0" FontStyle="Italic"/>
+                        <TextBlock Text="DOSTUPNI KURSEVI" FontWeight="Bold" FontSize="26" Grid.Row="0" FontStyle="Italic"
+                                    VerticalAlignment="Center"/>
 
 
 
@@ -44,7 +45,7 @@
                                         VerticalContentAlignment="Center">
                             
                             <DataGrid.Columns>
-                                
+
                                 <DataGridTemplateColumn x:Name="IconHeaderD"  Header="" CanUserResize="False">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
@@ -77,14 +78,15 @@
                         </DataGrid>
                     </Grid>
 
-                    <Grid Grid.Row="1">
+                    <Grid Grid.Column="2" Grid.Row="0">
 
                         <Grid.RowDefinitions>
-                            <RowDefinition Height="0.15*"/>
+                            <RowDefinition Height="0.07*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
 
-                        <TextBlock Text="NEDOSTUPNI KURSEVI" FontWeight="Bold" FontSize="26" Grid.Row="0" FontStyle="Italic"/>
+                        <TextBlock Text="NEDOSTUPNI KURSEVI" FontWeight="Bold" FontSize="26" Grid.Row="0" FontStyle="Italic"
+                                   VerticalAlignment="Center"/>
 
                         <DataGrid x:Name="nedostupniKurseviDGV" IsReadOnly="True" GridLinesVisibility="Horizontal" 
                                  AutoGenerateColumns="False" Grid.Row="1" Margin="0 0 0 20" AlternationCount="2">
@@ -95,7 +97,9 @@
                                 <DataGridTemplateColumn x:Name="IconHeaderN"  Header="" CanUserResize="False">
                                     <DataGridTemplateColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Image Source="{Binding Path=Slika}" Width="40" Height="40"/>
+
+                                            <Image Source="{Binding Path=BWSlika}" Width="40" Height="40"/>
+
                                         </DataTemplate>
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
@@ -103,7 +107,7 @@
                                 <DataGridTextColumn Header="Naziv" Binding="{Binding Path=Naziv}"/>
                                 <DataGridTextColumn Header="Kategorija" Binding="{Binding Path=Kategorija}"/>
                                 <DataGridTextColumn Header="Cena kursa" Binding="{Binding Path=Cena}"/>
-                                <DataGridTextColumn Header="Opis" Binding="{Binding Path=Opis}"/>
+                                <DataGridTextColumn Header="Opis" Binding="{Binding Path=Opis}" Width="*"/>
                             </DataGrid.Columns>
 
                             <DataGrid.RowStyle>
@@ -123,7 +127,7 @@
 
                     </Grid>
 
-                    <Grid Grid.Row="2">
+                    <Grid Grid.Row="1" Grid.ColumnSpan="3">
 
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -135,10 +139,7 @@
                         <Button Grid.Column="1" Margin="20 15" Content="IZMENI KURS" FontWeight="DemiBold"/>
                         <Button Grid.Column="2" Margin="20 15" Content="IZBRIŠI KURS" FontWeight="DemiBold"/>
 
-
-
                     </Grid>
-
 
                 </Grid>
 
