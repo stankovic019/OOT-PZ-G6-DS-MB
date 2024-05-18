@@ -18,26 +18,20 @@ namespace OOT_PZ_Kursevi
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Dictionary<int, Kurs> kursevi = new Dictionary<int, Kurs>();
         private ObservableCollection<Kurs> dostupniKursevi = new ObservableCollection<Kurs> ();
         private ObservableCollection<Kurs> nedostupniKursevi = new ObservableCollection<Kurs> ();
+        private Citac citac = new Citac();
 
         public MainWindow()
         {
             InitializeComponent();
 
-           
-            dostupniKursevi.Add(new Kurs(1, "C Programiranje", "niga", 32, "", "Predavanja"));
-            dostupniKursevi.Add(new Kurs(2, "OOP C#", "niiga", 44, "", "Vezbe"));
-            dostupniKursevi.Add(new Kurs(3, "Vega IT", "opalac", 0, "", "Praksa"));
-            
+            kursevi = citac.ucitajKurseve();
+            dostupniKursevi = citac.KursToObservableColection(true);
             dostupniKurseviDGV.ItemsSource = dostupniKursevi;
 
-            
-            
-            nedostupniKursevi.Add(new Kurs(3, "Vega IT", "opalac", 0, "", "Praksa"));
-            nedostupniKursevi.Add(new Kurs(2, "OOP C#", "niiga", 44, "", "Vezbe"));
-            nedostupniKursevi.Add(new Kurs(1, "C Programiranje", "niga", 32, "", "Predavanja"));
-
+            nedostupniKursevi = citac.KursToObservableColection(false);
             nedostupniKurseviDGV.ItemsSource = nedostupniKursevi;
 
 

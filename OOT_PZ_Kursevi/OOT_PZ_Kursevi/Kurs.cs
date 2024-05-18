@@ -30,7 +30,7 @@ namespace OOT_PZ_Kursevi
         #endregion
 
         #region KONSTRUKTOR
-        public Kurs(int id, string naziv, string opis, double cena, string slikaPath, string kategorija)
+        public Kurs(int id, string naziv, string opis, double cena, string slikaPath, string kategorija, bool dostupan)
         {
             this.id = id;
             this.naziv = naziv;
@@ -46,6 +46,7 @@ namespace OOT_PZ_Kursevi
 
             this.slika.UriSource = new Uri(slikaPath, UriKind.RelativeOrAbsolute);
             this.slika.EndInit();
+            this.dostupan = dostupan;
             //verovatno kasnije treba dodati ocitavanje slike
         }
         #endregion
@@ -140,6 +141,17 @@ namespace OOT_PZ_Kursevi
 
                 return newFormatedBitmapSource;
             }
+        }
+
+        public bool Dostupan { 
+            get {  return dostupan; } 
+            set {
+                if (this.dostupan != value)
+                {
+                    this.dostupan = value;
+                    this.NotifyPropertyChanged("Dostupan");
+                }
+            } 
         }
       
 

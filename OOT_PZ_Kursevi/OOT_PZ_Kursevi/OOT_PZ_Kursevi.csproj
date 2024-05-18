@@ -9,6 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Update="datoteke\kategorije.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="datoteke\kursevi.dat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="photos\noIcon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
