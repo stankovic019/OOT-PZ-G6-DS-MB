@@ -7,7 +7,7 @@
         mc:Ignorable="d"
 
         Title="Kursevi" Height="1080" Width="1920"
-        WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
+        WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Closed="Window_Closed">
 
 
 
@@ -42,8 +42,12 @@
 
 
                         <DataGrid x:Name="dostupniKurseviDGV" IsReadOnly="True" GridLinesVisibility="Horizontal" 
-                                        AutoGenerateColumns="False" Grid.Row="1" Margin="0 0 0 20" AlternationCount="2"
-                                        VerticalContentAlignment="Center" SelectionChanged="dostupniKurseviDGV_SelectionChanged">
+                                  AutoGenerateColumns="False" Grid.Row="1" Margin="0 0 0 20" AlternationCount="2"
+                                  VerticalContentAlignment="Center" SelectionChanged="dostupniKurseviDGV_SelectionChanged"
+                                  ItemsSource="{Binding dostupniKursevi}" 
+                                  SelectionMode="Extended" AllowDrop="True" PreviewMouseLeftButtonDown="dostupniKurseviDGV_PreviewMouseLeftButtonDown" 
+                                 PreviewMouseMove="dostupniKurseviDGV_PreviewMouseMove" Drop="dostupniKurseviDGV_Drop" CanUserSortColumns="False"
+                                  >
                             
                             <DataGrid.Columns>
 
@@ -55,7 +59,7 @@
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
 
-                                <DataGridTextColumn Header="ID" Binding="{Binding Path=ID}"/>
+                               
                                 <DataGridTextColumn Header="Naziv" Binding="{Binding Path=Naziv}"/>
                                 <DataGridTextColumn Header="Kategorija" Binding="{Binding Path=Kategorija}"/>
                                 <DataGridTextColumn Header="Cena kursa" Binding="{Binding Path=Cena}"/>
@@ -124,7 +128,10 @@
                                    VerticalAlignment="Center"/>
 
                         <DataGrid x:Name="nedostupniKurseviDGV" IsReadOnly="True" GridLinesVisibility="Horizontal" 
-                                 AutoGenerateColumns="False" Grid.Row="1" Margin="0 0 0 20" AlternationCount="2" SelectionChanged="nedostupniKurseviDGV_SelectionChanged">
+                                 AutoGenerateColumns="False" Grid.Row="1" Margin="0 0 0 20" AlternationCount="2" 
+                                  SelectionChanged="nedostupniKurseviDGV_SelectionChanged" ItemsSource="{Binding nedostupniStudenti}"
+                                  AllowDrop="True"  Drop="nedostupniKurseviDGV_Drop" PreviewMouseLeftButtonDown="nedostupniKurseviDGV_PreviewMouseLeftButtonDown" 
+                                 PreviewMouseMove="nedostupniKurseviDGV_PreviewMouseMove" CanUserSortColumns="False">
 
 
                             <DataGrid.Columns>
@@ -139,7 +146,7 @@
                                     </DataGridTemplateColumn.CellTemplate>
                                 </DataGridTemplateColumn>
                                 
-                                <DataGridTextColumn Header="ID" Binding="{Binding Path=ID}"/>
+                                
                                 <DataGridTextColumn Header="Naziv" Binding="{Binding Path=Naziv}"/>
                                 <DataGridTextColumn Header="Kategorija" Binding="{Binding Path=Kategorija}"/>
                                 <DataGridTextColumn Header="Cena kursa" Binding="{Binding Path=Cena}"/>
