@@ -16,7 +16,7 @@ namespace OOT_PZ_Kursevi
     
     public partial class MainWindow : Window
     {
-        #region DIMITRIJE polja
+        #region DIMITRIJE tab1 polja
         private Dictionary<int, Kurs> kursevi = new Dictionary<int, Kurs>();
         private ObservableCollection<Kurs> dostupniKursevi = new ObservableCollection<Kurs> ();
         private ObservableCollection<Kurs> nedostupniKursevi = new ObservableCollection<Kurs> ();
@@ -36,7 +36,7 @@ namespace OOT_PZ_Kursevi
             
         }
 
-        #region DIMITRIJE METODE
+        #region DIMITRIJE tab1 METODE
         //funkcija za inicijalizaciju izgleda taba1
         //potrebno je ucitati promene
         private void inicijalizujTab1()
