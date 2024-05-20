@@ -8,7 +8,7 @@
 
         Title="Kursevi" Height="1080" Width="1920"
         WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Closed="Window_Closed"
-        ShowInTaskbar="True">
+        ShowInTaskbar="True" ScrollViewer.CanContentScroll="True">
 
 
 
@@ -18,7 +18,7 @@
 
             <TabItem Header="Dostupni kursevi">
 
-                <Grid Margin="20 20 20 20">
+                <Grid Margin="20 20 20 20" ScrollViewer.CanContentScroll="True">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="2*"/>
                         <ColumnDefinition Width="0.2*" />
@@ -30,7 +30,7 @@
                         <RowDefinition Height="0.5*"/>
                     </Grid.RowDefinitions>
                     
-                    <Grid Grid.Column="0" Grid.Row="0">
+                    <Grid Grid.Column="0" Grid.Row="0" x:Name="gridDostupnih">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="0.07*"/>
                             <RowDefinition Height="*"/>
@@ -41,49 +41,50 @@
                                     VerticalAlignment="Center"/>
 
 
+                        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                            <DataGrid x:Name="dostupniKurseviDGV" IsReadOnly="True" GridLinesVisibility="Horizontal" 
+                                      AutoGenerateColumns="False" Margin="0 0 0 20" AlternationCount="2"
+                                      VerticalContentAlignment="Center" SelectionChanged="dostupniKurseviDGV_SelectionChanged"
+                                      ItemsSource="{Binding dostupniKursevi}" 
+                                      SelectionMode="Extended" AllowDrop="True" PreviewMouseLeftButtonDown="dostupniKurseviDGV_PreviewMouseLeftButtonDown" 
+                                     PreviewMouseMove="dostupniKurseviDGV_PreviewMouseMove" CanUserReorderColumns="False" Drop="dostupniKurseviDGV_Drop" 
+                                      CanUserSortColumns="False">
 
-                        <DataGrid x:Name="dostupniKurseviDGV" IsReadOnly="True" GridLinesVisibility="Horizontal" 
-                                  AutoGenerateColumns="False" Grid.Row="1" Margin="0 0 0 20" AlternationCount="2"
-                                  VerticalContentAlignment="Center" SelectionChanged="dostupniKurseviDGV_SelectionChanged"
-                                  ItemsSource="{Binding dostupniKursevi}" 
-                                  SelectionMode="Extended" AllowDrop="True" PreviewMouseLeftButtonDown="dostupniKurseviDGV_PreviewMouseLeftButtonDown" 
-                                 PreviewMouseMove="dostupniKurseviDGV_PreviewMouseMove" Drop="dostupniKurseviDGV_Drop" CanUserSortColumns="False"
-                                  >
-                            
-                            <DataGrid.Columns>
-
-                                <DataGridTemplateColumn x:Name="IconHeaderD"  Header="" CanUserResize="False">
-                                    <DataGridTemplateColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <Image Source="{Binding Path=Slika}" Width="40" Height="40"/>
-                                        </DataTemplate>
-                                    </DataGridTemplateColumn.CellTemplate>
-                                </DataGridTemplateColumn>
-
-                               
-                                <DataGridTextColumn Header="Naziv" Binding="{Binding Path=Naziv}"/>
-                                <DataGridTextColumn Header="Kategorija" Binding="{Binding Path=Kategorija}"/>
-                                <DataGridTextColumn Header="Cena kursa" Binding="{Binding Path=Cena}"/>
-                                <DataGridTextColumn Header="Opis" Binding="{Binding Path=Opis}" Width="*"/>
-                            </DataGrid.Columns>
+                                <DataGrid.Columns>
 
 
+                                    <DataGridTemplateColumn x:Name="IconHeaderD"  Header="" CanUserResize="False">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
+                                                <Image Source="{Binding Path=Slika}" Width="40" Height="40"/>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
 
-                            <DataGrid.RowStyle>
 
-                                <Style TargetType="{x:Type DataGridRow}">
-                                    <Style.Triggers>
-                                        <Trigger Property="ItemsControl.AlternationIndex" Value="0">
-                                            <Setter Property="Background" Value="White"/>
-                                        </Trigger>
-                                        <Trigger Property="ItemsControl.AlternationIndex" Value="1">
-                                            <Setter Property="Background" Value="#FFBFE2B7"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </DataGrid.RowStyle>
-                        </DataGrid>
+                                    <DataGridTextColumn Header="Naziv" Binding="{Binding Path=Naziv}"/>
+                                    <DataGridTextColumn Header="Kategorija" Binding="{Binding Path=Kategorija}"/>
+                                    <DataGridTextColumn Header="Cena kursa" Binding="{Binding Path=Cena}"/>
+                                    <DataGridTextColumn Header="Opis" Binding="{Binding Path=Opis}"/>
+                                </DataGrid.Columns>
 
+
+
+                                <DataGrid.RowStyle>
+
+                                    <Style TargetType="{x:Type DataGridRow}">
+                                        <Style.Triggers>
+                                            <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                                                <Setter Property="Background" Value="White"/>
+                                            </Trigger>
+                                            <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                                                <Setter Property="Background" Value="#FFBFE2B7"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGrid.RowStyle>
+                            </DataGrid>
+                        </ScrollViewer>
                         <Grid Grid.Row="2">
                             
                                 <Grid.RowDefinitions>
@@ -127,48 +128,49 @@
 
                         <TextBlock Text="NEDOSTUPNI KURSEVI" FontWeight="Bold" FontSize="26" Grid.Row="0" FontStyle="Italic"
                                    VerticalAlignment="Center"/>
-
-                        <DataGrid x:Name="nedostupniKurseviDGV" IsReadOnly="True" GridLinesVisibility="Horizontal" 
+                        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                            <DataGrid x:Name="nedostupniKurseviDGV" IsReadOnly="True" GridLinesVisibility="Horizontal" 
                                  AutoGenerateColumns="False" Grid.Row="1" Margin="0 0 0 20" AlternationCount="2" 
                                   SelectionChanged="nedostupniKurseviDGV_SelectionChanged" ItemsSource="{Binding nedostupniStudenti}"
                                   AllowDrop="True"  Drop="nedostupniKurseviDGV_Drop" PreviewMouseLeftButtonDown="nedostupniKurseviDGV_PreviewMouseLeftButtonDown" 
-                                 PreviewMouseMove="nedostupniKurseviDGV_PreviewMouseMove" CanUserSortColumns="False">
+                                 PreviewMouseMove="nedostupniKurseviDGV_PreviewMouseMove" CanUserReorderColumns="False" CanUserSortColumns="False">
+
+                                <DataGrid.Columns>
 
 
-                            <DataGrid.Columns>
-                                
-                                <DataGridTemplateColumn x:Name="IconHeaderN"  Header="" CanUserResize="False">
-                                    <DataGridTemplateColumn.CellTemplate>
-                                        <DataTemplate>
+                                    <DataGridTemplateColumn x:Name="IconHeaderN"  Header="" CanUserResize="False">
+                                        <DataGridTemplateColumn.CellTemplate>
+                                            <DataTemplate>
 
-                                            <Image Source="{Binding Path=BWSlika}" Width="40" Height="40"/>
+                                                <Image Source="{Binding Path=BWSlika}" Width="40" Height="40"/>
 
-                                        </DataTemplate>
-                                    </DataGridTemplateColumn.CellTemplate>
-                                </DataGridTemplateColumn>
-                                
-                                
-                                <DataGridTextColumn Header="Naziv" Binding="{Binding Path=Naziv}"/>
-                                <DataGridTextColumn Header="Kategorija" Binding="{Binding Path=Kategorija}"/>
-                                <DataGridTextColumn Header="Cena kursa" Binding="{Binding Path=Cena}"/>
-                                <DataGridTextColumn Header="Opis" Binding="{Binding Path=Opis}" Width="*"/>
-                            </DataGrid.Columns>
+                                            </DataTemplate>
+                                        </DataGridTemplateColumn.CellTemplate>
+                                    </DataGridTemplateColumn>
 
-                            <DataGrid.RowStyle>
-                                <Style TargetType="{x:Type DataGridRow}">
-                                    <Style.Triggers>
-                                        <Trigger Property="ItemsControl.AlternationIndex" Value="0">
-                                            <Setter Property="Background" Value="White"/>
-                                        </Trigger>
-                                        <Trigger Property="ItemsControl.AlternationIndex" Value="1">
-                                            <Setter Property="Background" Value="#FFE2B1B1"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </DataGrid.RowStyle>
 
-                        </DataGrid>
+                                    <DataGridTextColumn Header="Naziv" Binding="{Binding Path=Naziv}"/>
+                                    <DataGridTextColumn Header="Kategorija" Binding="{Binding Path=Kategorija}"/>
+                                    <DataGridTextColumn Header="Cena kursa" Binding="{Binding Path=Cena}"/>
+                                    <DataGridTextColumn Header="Opis" Binding="{Binding Path=Opis}"/>
 
+                                </DataGrid.Columns>
+
+                                <DataGrid.RowStyle>
+                                    <Style TargetType="{x:Type DataGridRow}">
+                                        <Style.Triggers>
+                                            <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                                                <Setter Property="Background" Value="White"/>
+                                            </Trigger>
+                                            <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                                                <Setter Property="Background" Value="#FFE2B1B1"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DataGrid.RowStyle>
+
+                            </DataGrid>
+                        </ScrollViewer>
                     </Grid>
 
                     <Grid Grid.Row="1" Grid.ColumnSpan="3">
@@ -214,7 +216,7 @@
                         <TextBlock Text="KATEGORIJE KURSEVA" FontWeight="Bold" FontSize="26" Grid.Row="0" FontStyle="Italic" VerticalAlignment="Center"/>
 
                         <DataGrid Grid.Row="1" Margin="0 10 0 0" Name="kategorijeKursevaDGV" IsReadOnly="True" GridLinesVisibility="Horizontal" 
-                                 AutoGenerateColumns="False" AlternationCount="2" CanUserSortColumns="False" SelectionChanged="kategorijeKursevaDGV_SelectionChanged">
+                                 AutoGenerateColumns="False" AlternationCount="2" CanUserReorderColumns="False"  CanUserSortColumns="False" SelectionChanged="kategorijeKursevaDGV_SelectionChanged">
 
                             <DataGrid.Columns>
 
@@ -260,7 +262,7 @@
                                    VerticalAlignment="Center" Name="kurseviKategorijeTBl"/>
 
                         <DataGrid Grid.Row="1" Margin="0 10 0 0" Name="kurseviKategorijeDGV" IsReadOnly="True" GridLinesVisibility="Horizontal" 
-                                    AutoGenerateColumns="False" AlternationCount="2" CanUserSortColumns="False" SelectionChanged="kategorijeKursevaDGV_SelectionChanged">
+                                    AutoGenerateColumns="False" AlternationCount="2"  CanUserReorderColumns="False" CanUserSortColumns="False" SelectionChanged="kategorijeKursevaDGV_SelectionChanged">
 
                             <DataGrid.Columns>
 
