@@ -155,7 +155,11 @@ namespace OOT_PZ_Kursevi
                 }
             } 
         }
-      
+        
+        public string Dostupnost
+        {
+            get { return dostupan == true ? "Dostupan" : "Nedostupan"; }
+        }
 
 
         #endregion

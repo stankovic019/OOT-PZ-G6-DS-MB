@@ -479,8 +479,13 @@ namespace OOT_PZ_Kursevi
                 if (maksDuzinaPolja[brojacDuzina] < kurseviOdredjeneKategorije[i].Kategorija.Length)
                     maksDuzinaPolja[brojacDuzina] = kurseviOdredjeneKategorije[i].Kategorija.Length;
                 brojacDuzina++;
-                
-                worksheet.Cells[i + 2, 6] = kurseviOdredjeneKategorije[i].Opis;
+
+                worksheet.Cells[i + 2, 6] = kurseviOdredjeneKategorije[i].Dostupnost;
+                if (maksDuzinaPolja[brojacDuzina] < kurseviOdredjeneKategorije[i].Dostupnost.Length)
+                    maksDuzinaPolja[brojacDuzina] = kurseviOdredjeneKategorije[i].Dostupnost.Length;
+                brojacDuzina++;
+
+                worksheet.Cells[i + 2, 7] = kurseviOdredjeneKategorije[i].Opis;
                 if (maksDuzinaPolja[brojacDuzina] < kurseviOdredjeneKategorije[i].Opis.Length)
                     maksDuzinaPolja[brojacDuzina] = kurseviOdredjeneKategorije[i].Opis.Length;
                 brojacDuzina=0;
@@ -492,6 +497,7 @@ namespace OOT_PZ_Kursevi
             worksheet.Columns[4].ColumnWidth = maksDuzinaPolja[3];
             worksheet.Columns[5].ColumnWidth = maksDuzinaPolja[4];
             worksheet.Columns[6].ColumnWidth = maksDuzinaPolja[5];
+            worksheet.Columns[7].ColumnWidth = maksDuzinaPolja[6];
 
             this.WindowState = WindowState.Minimized;
             app.WindowState = Microsoft.Office.Interop.Excel.XlWindowState.xlMaximized;

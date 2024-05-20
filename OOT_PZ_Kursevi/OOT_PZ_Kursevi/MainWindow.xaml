@@ -280,6 +280,7 @@
                                 <DataGridTextColumn Header="Naziv" Binding="{Binding Path=Naziv}"/>
                                 <DataGridTextColumn Header="Cena kursa" Binding="{Binding Path=Cena}"/>
                                 <DataGridTextColumn Header="Kategorija" Binding="{Binding Path=Kategorija}"/>
+                                <DataGridTextColumn Header="Dostupnost" Binding="{Binding Path=Dostupnost}"/>
                                 <DataGridTextColumn Header="Opis" Binding="{Binding Path=Opis}" Width="*"/>
 
                             </DataGrid.Columns>

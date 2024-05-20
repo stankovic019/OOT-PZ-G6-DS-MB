@@ -45,7 +45,7 @@ namespace OOT_PZ_Kursevi
         {
             OpenFileDialog ofd = new OpenFileDialog();
 
-            ofd.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp";
+            ofd.Filter = "JPG Files (*.jpg)|*.jpg|JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp";
 
 
 
