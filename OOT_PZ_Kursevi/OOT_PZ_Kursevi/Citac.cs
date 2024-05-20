@@ -67,6 +67,17 @@ namespace OOT_PZ_Kursevi
 
         }
 
+        public ObservableCollection<Kurs> KursToObservableColection()
+        {
+            ObservableCollection<Kurs> kurs = new ObservableCollection<Kurs>();
+
+            foreach (int key in kursevi.Keys)
+                    kurs.Add(kursevi[key]);
+
+            return kurs;
+
+        }
+
         public Dictionary<int, Kategorija> ucitajKategorije()
         {
             string sadrzajDatoteke = File.ReadAllText(@"datoteke\kategorije.dat");
@@ -87,7 +98,18 @@ namespace OOT_PZ_Kursevi
             return kategorije;
         }
 
-        
+        public ObservableCollection<Kategorija> KategorijaToObservableColection()
+        {
+            ObservableCollection<Kategorija> kate = new ObservableCollection<Kategorija>();
+
+            foreach (int key in kategorije.Keys)
+                    kate.Add(kategorije[key]);
+
+            return kate;
+
+        }
+
+
 
 
     }

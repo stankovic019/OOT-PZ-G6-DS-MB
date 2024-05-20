@@ -47,3 +47,5 @@ C:\Users\Dimitrije\Documents\GitHub\OOT-PZ-G6-DS-MB\OOT_PZ_Kursevi\OOT_PZ_Kursev
 C:\Users\Dimitrije\Documents\GitHub\OOT-PZ-G6-DS-MB\OOT_PZ_Kursevi\OOT_PZ_Kursevi\obj\Debug\net8.0-windows\Dodaj.baml
 C:\Users\Dimitrije\Documents\GitHub\OOT-PZ-G6-DS-MB\OOT_PZ_Kursevi\OOT_PZ_Kursevi\obj\Debug\net8.0-windows\Izmeni.g.cs
 C:\Users\Dimitrije\Documents\GitHub\OOT-PZ-G6-DS-MB\OOT_PZ_Kursevi\OOT_PZ_Kursevi\obj\Debug\net8.0-windows\Izmeni.baml
+C:\Users\Dimitrije\Documents\GitHub\OOT-PZ-G6-DS-MB\OOT_PZ_Kursevi\OOT_PZ_Kursevi\obj\Debug\net8.0-windows\Interop.Microsoft.Office.Interop.Excel.dll
+C:\Users\Dimitrije\Documents\GitHub\OOT-PZ-G6-DS-MB\OOT_PZ_Kursevi\OOT_PZ_Kursevi\obj\Debug\net8.0-windows\OOT_PZ_Kursevi.csproj.ResolveComReference.cache

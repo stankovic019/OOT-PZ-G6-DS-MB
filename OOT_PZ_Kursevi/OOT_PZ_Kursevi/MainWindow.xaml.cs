@@ -10,13 +10,24 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
+using System.Runtime.InteropServices;
 
 namespace OOT_PZ_Kursevi
 {
     
     public partial class MainWindow : Window
     {
-        #region DIMITRIJE tab1 polja
+
+        public MainWindow()
+        {
+            InitializeComponent();
+
+            inicijalizujTab1();
+            inicijalizujTab3();
+            
+        }
+
+        #region DIMITRIJE tab1
         private Dictionary<int, Kurs> kursevi = new Dictionary<int, Kurs>();
         private ObservableCollection<Kurs> dostupniKursevi = new ObservableCollection<Kurs> ();
         private ObservableCollection<Kurs> nedostupniKursevi = new ObservableCollection<Kurs> ();
@@ -26,17 +37,6 @@ namespace OOT_PZ_Kursevi
         private Point _startPoint;
         private Citac citac = new Citac();
 
-        #endregion
-
-        public MainWindow()
-        {
-            InitializeComponent();
-
-            inicijalizujTab1();
-            
-        }
-
-        #region DIMITRIJE tab1 METODE
         //funkcija za inicijalizaciju izgleda taba1
         //potrebno je ucitati promene
         private void inicijalizujTab1()
@@ -359,6 +359,40 @@ namespace OOT_PZ_Kursevi
         }
 
         #endregion
+
+
+        #region tab3
+
+        private Dictionary<int, Kategorija> kategorijeTab3 = new Dictionary<int, Kategorija>();
+        private ObservableCollection<Kategorija> kategorijeCollection = new ObservableCollection<Kategorija>();
+        private ObservableCollection<Kurs> kurseviOdredjeneKategorije = new ObservableCollection<Kurs>();
+        private void inicijalizujTab3()
+        {
+
+            kategorijeTab3 = citac.ucitajKategorije();
+            kategorijeCollection = citac.KategorijaToObservableColection();
+            kategorijeKursevaDGV.ItemsSource = kategorijeCollection;
+            exportBtn.IsEnabled = false;
+
+
+        }
+        #endregion
+
+        private void nadjiKurseveOdredjeneKategorije()
+        {
+            ObservableCollection<Kurs> sviKursevi = citac.KursToObservableColection();
+            kurseviKategorijeDGV.ItemsSource = null;
+            kurseviOdredjeneKategorije.Clear();
+
+            foreach(Kurs k in sviKursevi)
+                if(k.Kategorija == nazivSelektovaneKategorije)
+                    kurseviOdredjeneKategorije.Add(k);
+
+            kurseviKategorijeDGV.ItemsSource = kurseviOdredjeneKategorije;
+        }
+
+
+
         private void Window_Closed(object sender, EventArgs e)
         {
             //potrebno je reci operativnom sistemu da ako se zatvori glavni prozor ugasi aplikaciju
@@ -369,5 +403,103 @@ namespace OOT_PZ_Kursevi
             
         }
 
+        private string nazivSelektovaneKategorije = "";
+        private void kategorijeKursevaDGV_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (kategorijeKursevaDGV.SelectedIndex == -1)
+            {
+                exportBtn.IsEnabled = false;
+                return;
+            }
+
+            exportBtn.IsEnabled = true;
+
+            nazivSelektovaneKategorije = kategorijeCollection[kategorijeKursevaDGV.SelectedIndex].Naziv;
+
+            kurseviKategorijeTBl.Text = "KURSEVI KATEGORIJE \"" + nazivSelektovaneKategorije + "\"";
+
+            nadjiKurseveOdredjeneKategorije();          
+
+        }
+
+
+
+        private void exportToExcel(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
+
+            Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
+
+            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+
+            app.Visible = true;
+
+            worksheet = workbook.Sheets["Sheet1"];
+            worksheet = workbook.ActiveSheet;
+
+            worksheet.Name = nazivSelektovaneKategorije + "_EXPORTED";
+
+
+            int[] maksDuzinaPolja = new int[kurseviKategorijeDGV.Columns.Count];
+            worksheet.Cells[1, 1] = "iconPath";
+            maksDuzinaPolja[0] = (new String("iconPath").Length);
+            for (int i = 2; i < kurseviKategorijeDGV.Columns.Count + 1; i++)
+            {
+                worksheet.Cells[1, i] = kurseviKategorijeDGV.Columns[i - 1].Header.ToString();
+                maksDuzinaPolja[i-1] = kurseviKategorijeDGV.Columns[i - 1].Header.ToString().Length;
+            }
+
+            
+            int brojacDuzina = 0;
+
+            for (int i = 0; i < kurseviOdredjeneKategorije.Count; ++i)
+            {
+                
+                worksheet.Cells[i + 2, 1] = kurseviOdredjeneKategorije[i].SlikaPath;
+                if (maksDuzinaPolja[brojacDuzina] < kurseviOdredjeneKategorije[i].SlikaPath.Length)
+                    maksDuzinaPolja[brojacDuzina] = kurseviOdredjeneKategorije[i].SlikaPath.Length;
+                brojacDuzina++;
+
+                worksheet.Cells[i + 2, 2] = kurseviOdredjeneKategorije[i].ID.ToString();
+                if (maksDuzinaPolja[brojacDuzina] < kurseviOdredjeneKategorije[i].ID.ToString().Length)
+                    maksDuzinaPolja[brojacDuzina] = kurseviOdredjeneKategorije[i].ID.ToString().Length;
+                brojacDuzina++;
+
+                worksheet.Cells[i + 2, 3] = kurseviOdredjeneKategorije[i].Naziv;
+                if (maksDuzinaPolja[brojacDuzina] < kurseviOdredjeneKategorije[i].Naziv.Length)
+                    maksDuzinaPolja[brojacDuzina] = kurseviOdredjeneKategorije[i].Naziv.Length;
+                brojacDuzina++;
+
+                worksheet.Cells[i + 2, 4] = kurseviOdredjeneKategorije[i].Cena.ToString();
+                if (maksDuzinaPolja[brojacDuzina] < kurseviOdredjeneKategorije[i].Cena.ToString().Length)
+                    maksDuzinaPolja[brojacDuzina] = kurseviOdredjeneKategorije[i].Cena.ToString().Length;
+                brojacDuzina++;
+
+                worksheet.Cells[i + 2, 5] = kurseviOdredjeneKategorije[i].Kategorija;
+                if (maksDuzinaPolja[brojacDuzina] < kurseviOdredjeneKategorije[i].Kategorija.Length)
+                    maksDuzinaPolja[brojacDuzina] = kurseviOdredjeneKategorije[i].Kategorija.Length;
+                brojacDuzina++;
+                
+                worksheet.Cells[i + 2, 6] = kurseviOdredjeneKategorije[i].Opis;
+                if (maksDuzinaPolja[brojacDuzina] < kurseviOdredjeneKategorije[i].Opis.Length)
+                    maksDuzinaPolja[brojacDuzina] = kurseviOdredjeneKategorije[i].Opis.Length;
+                brojacDuzina=0;
+            }
+
+            worksheet.Columns[1].ColumnWidth = maksDuzinaPolja[0];
+            worksheet.Columns[2].ColumnWidth = maksDuzinaPolja[1];
+            worksheet.Columns[3].ColumnWidth = maksDuzinaPolja[2];
+            worksheet.Columns[4].ColumnWidth = maksDuzinaPolja[3];
+            worksheet.Columns[5].ColumnWidth = maksDuzinaPolja[4];
+            worksheet.Columns[6].ColumnWidth = maksDuzinaPolja[5];
+
+            this.WindowState = WindowState.Minimized;
+            app.WindowState = Microsoft.Office.Interop.Excel.XlWindowState.xlMaximized;
+            app.ActiveWindow.Activate();
+            
+            
+            
+
+        }
     }
 }
