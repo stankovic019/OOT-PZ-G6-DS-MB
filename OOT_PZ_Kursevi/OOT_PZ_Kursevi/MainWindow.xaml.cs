@@ -179,5 +179,53 @@ namespace OOT_PZ_Kursevi
             dostupniKurseviDGV.ItemsSource = odredjeniKursevi;
 
         }
+
+        private void PopuniTreeView()
+        {
+            Dictionary<int, Kategorija> kategorije = citac.ucitajKategorije();
+            foreach(var k in kategorije)
+            {
+                TreeViewItem kategorijaNode = NapraviTreeViewItem(k.Value.Naziv, k.Value.Slika);
+                Dictionary<int, Kurs> kursevi = citac.ucitajKurseve();
+                foreach (var kurs in kursevi)
+                {
+                    if (k.Value.Naziv == kurs.Value.Kategorija)
+                    {
+                        TreeViewItem kursNode = NapraviTreeViewItem(kurs.Value.Naziv, kurs.Value.Slika);
+                        kategorijaNode.Items.Add(kursNode);
+                    }
+                }
+                MyTreeView.Items.Add(kategorijaNode);
+
+            }
+        }
+
+        private TreeViewItem NapraviTreeViewItem(string text, BitmapImage imageSource)
+        { 
+            StackPanel stackPanel = new StackPanel();
+            stackPanel.Orientation = Orientation.Horizontal;
+
+            Image image = new Image();
+            image.Source = imageSource;
+            image.Width = 16; 
+            image.Height = 16; 
+            image.Margin = new Thickness(0, 0, 5, 0); 
+
+            TextBlock textBlock = new TextBlock();
+            textBlock.Text = text;
+
+            stackPanel.Children.Add(image);
+            stackPanel.Children.Add(textBlock);
+
+            TreeViewItem treeViewItem = new TreeViewItem();
+            treeViewItem.Header = stackPanel;
+
+            return treeViewItem;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            PopuniTreeView();
+        }
     }
 }
