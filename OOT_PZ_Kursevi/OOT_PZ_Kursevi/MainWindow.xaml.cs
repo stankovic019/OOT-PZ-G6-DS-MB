@@ -11,6 +11,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Diagnostics.Eventing.Reader;
 
 namespace OOT_PZ_Kursevi
 {
@@ -18,20 +19,24 @@ namespace OOT_PZ_Kursevi
     public partial class MainWindow : Window
     {
 
+
         public MainWindow()
         {
             InitializeComponent();
 
             inicijalizujTab1();
             inicijalizujTab3();
+
+            //MAJA INICIJALIZACIJA
+            PopuniTreeView();
             
         }
 
-        #region DIMITRIJE tab1
         private Dictionary<int, Kurs> kursevi = new Dictionary<int, Kurs>();
         private ObservableCollection<Kurs> dostupniKursevi = new ObservableCollection<Kurs> ();
         private ObservableCollection<Kurs> nedostupniKursevi = new ObservableCollection<Kurs> ();
         private ObservableCollection<Kurs> odredjeniKursevi = new ObservableCollection<Kurs>();
+        private ObservableCollection<Kurs> Korp { get; set; } = new ObservableCollection<Kurs>();
         private bool searchOn = false;
         private bool ignoreIndexChange = false;
         private Point _startPoint;
@@ -340,6 +345,28 @@ namespace OOT_PZ_Kursevi
                 var dataObj = new DataObject(dataTodrop);
                 dataObj.SetData("DragSource", sender);
                 DragDrop.DoDragDrop(dg, dataObj, DragDropEffects.Copy);
+        private void PopuniTreeView()
+        {
+
+            Dictionary<int, Kategorija> kategorije = citac.ucitajKategorije();
+            foreach(var k in kategorije)
+            {
+                ;
+                TreeViewItem kategorijaNode = NapraviTreeViewItem(k.Value.Naziv, k.Value.Slika);
+                
+                Dictionary<int, Kurs> kursevi = citac.ucitajKurseve();
+                foreach (var kurs in kursevi)
+                {
+                    if (k.Value.Naziv == kurs.Value.Kategorija)
+                    {
+                        //BitmapImage kursSlika = kurs.Value.Slika;
+                        TreeViewItem kursNode = NapraviTreeViewItem(kurs.Value.Naziv, kurs.Value.Slika);
+                        kursNode.DataContext = kurs.Value;
+
+                        kategorijaNode.Items.Add(kursNode);
+                    }
+                }
+                MyTreeView.Items.Add(kategorijaNode);
 
             }
         }
@@ -358,10 +385,10 @@ namespace OOT_PZ_Kursevi
             }catch (Exception) { }
         }
 
-        #endregion
+      
 
 
-        #region tab3
+       
 
         private Dictionary<int, Kategorija> kategorijeTab3 = new Dictionary<int, Kategorija>();
         private ObservableCollection<Kategorija> kategorijeCollection = new ObservableCollection<Kategorija>();
@@ -376,7 +403,7 @@ namespace OOT_PZ_Kursevi
 
 
         }
-        #endregion
+      
 
         private void nadjiKurseveOdredjeneKategorije()
         {
@@ -508,6 +535,105 @@ namespace OOT_PZ_Kursevi
             
             
 
+        private TreeViewItem NapraviTreeViewItem(string text, BitmapImage imageSource)
+        { 
+            StackPanel stackPanel = new StackPanel();
+            stackPanel.Orientation = Orientation.Horizontal;
+
+            Image image = new Image();
+            image.Source = imageSource;
+            image.Width = 30; 
+            image.Height = 50; 
+            image.Margin = new Thickness(0, 0, 5, 0); 
+
+            TextBlock textBlock = new TextBlock();
+            textBlock.Text = text;
+
+            stackPanel.Children.Add(image);
+            stackPanel.Children.Add(textBlock);
+
+            TreeViewItem treeViewItem = new TreeViewItem();
+            treeViewItem.Header = stackPanel;
+
+            return treeViewItem;
+        }
+
+        
+         
+        private List<Kurs> GetSelectedCoursesFromTreeView(TreeView treeView)
+        {
+            var izabraniKursevi = new List<Kurs>();
+            foreach(var item in treeView.Items)
+            {
+                var treeViewItem = treeView.ItemContainerGenerator.ContainerFromItem(item) as TreeViewItem;
+                if(treeViewItem != null && treeViewItem.IsSelected)
+                {
+                    izabraniKursevi.Add(treeViewItem.DataContext as Kurs);
+
+                }
+                GetSelectedCoursesFromTreeViewItem(treeViewItem, izabraniKursevi);
+            }
+            return izabraniKursevi;
+        }
+    
+        private void GetSelectedCoursesFromTreeViewItem(TreeViewItem item, List<Kurs> izabraniKursevi)
+        {
+            if(item == null)
+            {
+                return;
+            }
+            
+                foreach(var item2 in item.Items)
+                {
+                    var subTreeViewItem = item.ItemContainerGenerator.ContainerFromItem(item2) as TreeViewItem;
+                if(subTreeViewItem != null && subTreeViewItem.IsSelected)
+                {
+
+                    izabraniKursevi.Add(subTreeViewItem.DataContext as Kurs);
+                }
+                GetSelectedCoursesFromTreeViewItem(subTreeViewItem, izabraniKursevi);
+                }
+            
+        }
+
+        
+           
+
+
+
+        private void MyTreeView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+            var izabraniKurs = GetSelectedCoursesFromTreeView(MyTreeView);
+            foreach (var item in izabraniKurs)
+            {
+                if (item is Kurs kurs)
+                {
+                    if (!Korp.Contains(kurs) && kurs.Dostupan)
+                    {
+                        Korp.Add(kurs);
+                    }
+                    else if (!kurs.Dostupan)
+                    {
+                        MessageBox.Show($"Kurs trenutno nije dostupan", "Kurs nedostupan", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Kurs je vec u korpi", "Kurs u korpi", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show($"Nije selektovan kurs", "Kurs nije selektovan", MessageBoxButton.OK, MessageBoxImage.Warning);
+                }
+            }
+            Korpa.ItemsSource = Korp;
+        }
+
+        private void Potvrdi_Click(object sender, RoutedEventArgs e)
+        {
+            var drugi_prozor = new Potvrdi(Korp);
+            drugi_prozor.Show();
         }
     }
 }

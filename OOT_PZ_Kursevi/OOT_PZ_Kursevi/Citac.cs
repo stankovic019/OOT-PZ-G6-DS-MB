@@ -35,7 +35,7 @@ namespace OOT_PZ_Kursevi
 
                 if (!System.IO.Path.Exists(path))
                     path = Environment.CurrentDirectory + polja[4];
-                
+                    
 
                 Kurs k = new Kurs(Convert.ToInt32(polja[0]), polja[1], polja[2], Convert.ToDouble(polja[3]), path, polja[5],
                                   (polja[6].ToLower() == "true" ? true : false));

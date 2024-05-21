@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 using System.IO;
 
-namespace OOT_PZ_Kursevi 
+namespace OOT_PZ_Kursevi
 {
     class Kategorija : INotifyPropertyChanged
     {
@@ -26,7 +26,7 @@ namespace OOT_PZ_Kursevi
         #endregion
 
         #region KONSTRUKTOR
-        public Kategorija(int id,  string naziv, string opis, string slikaPath)
+        public Kategorija(int id, string naziv, string opis, string slikaPath)
         {
             this.id = id;
             this.naziv = naziv;
@@ -61,7 +61,8 @@ namespace OOT_PZ_Kursevi
                 }
             }
         }
-        public string Opis { 
+        public string Opis
+        {
             get { return opis; }
             set
             {
