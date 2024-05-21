@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OOT_PZ_Kursevi"
         mc:Ignorable="d"
-        Title="Potvrdi" Height="450" Width="800">
+        Title="Potvrdi" Height="450" Width="400">
     <Grid>
-        <ListView x:Name="Lista_Potvrdi" HorizontalAlignment="Center" VerticalAlignment="Center" Height="450" Width="800">
+        <ListView x:Name="Lista_Potvrdi" HorizontalAlignment="Center" VerticalAlignment="Center" Height="430" Width="400" Background="#FFBDBDBD" >
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Naziv" DisplayMemberBinding="{Binding Naziv}" Width="250"/>
-                    <GridViewColumn Header="Kategorija" DisplayMemberBinding="{Binding Kategorija}" Width="250"/>
+                    <GridViewColumn Header="Naziv" DisplayMemberBinding="{Binding Naziv}" Width="200"/>
+                    <GridViewColumn Header="Kategorija" DisplayMemberBinding="{Binding Kategorija}" Width="100"/>
+                    <GridViewColumn Header="Cena" DisplayMemberBinding="{Binding Cena}" Width="100"/>
                 </GridView>
             </ListView.View>
         </ListView>
