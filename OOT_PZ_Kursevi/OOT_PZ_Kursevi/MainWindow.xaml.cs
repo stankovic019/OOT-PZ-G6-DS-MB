@@ -35,13 +35,14 @@ namespace OOT_PZ_Kursevi
         }
 
         private void inicijalizuj()
-        {
+        {   
             kursevi = citac.ucitajKurseve();
             dostupniKursevi = citac.KursToObservableColection(true);
             dostupniKurseviDGV.ItemsSource = dostupniKursevi;
 
             nedostupniKursevi = citac.KursToObservableColection(false);
             nedostupniKurseviDGV.ItemsSource = nedostupniKursevi;
+            
         }
 
 
@@ -186,16 +187,16 @@ namespace OOT_PZ_Kursevi
             Dictionary<int, Kategorija> kategorije = citac.ucitajKategorije();
             foreach(var k in kategorije)
             {
-                BitmapImage kategorijaSlika = new BitmapImage(new Uri(k.Value.SlikaPath, UriKind.RelativeOrAbsolute));
-                TreeViewItem kategorijaNode = NapraviTreeViewItem(k.Value.Naziv, kategorijaSlika);
+                //BitmapImage kategorijaSlika = k.Value.Slika;
+                TreeViewItem kategorijaNode = NapraviTreeViewItem(k.Value.Naziv, k.Value.Slika);
                 
                 Dictionary<int, Kurs> kursevi = citac.ucitajKurseve();
                 foreach (var kurs in kursevi)
                 {
                     if (k.Value.Naziv == kurs.Value.Kategorija)
                     {
-                        BitmapImage kursSlika = new BitmapImage(new Uri(kurs.Value.SlikaPath, UriKind.RelativeOrAbsolute));
-                        TreeViewItem kursNode = NapraviTreeViewItem(kurs.Value.Naziv, kursSlika);
+                        //BitmapImage kursSlika = kurs.Value.Slika;
+                        TreeViewItem kursNode = NapraviTreeViewItem(kurs.Value.Naziv, kurs.Value.Slika);
                         kategorijaNode.Items.Add(kursNode);
                     }
                 }

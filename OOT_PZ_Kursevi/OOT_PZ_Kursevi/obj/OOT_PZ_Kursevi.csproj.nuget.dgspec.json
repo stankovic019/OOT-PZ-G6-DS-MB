@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\janko\\OneDrive\\Dokumenti\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj": {}
+    "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\janko\\OneDrive\\Dokumenti\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj": {
+    "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\janko\\OneDrive\\Dokumenti\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj",
+        "projectUniqueName": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj",
         "projectName": "OOT_PZ_Kursevi",
-        "projectPath": "C:\\Users\\janko\\OneDrive\\Dokumenti\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj",
-        "packagesPath": "C:\\Users\\janko\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\janko\\OneDrive\\Dokumenti\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\obj\\",
+        "projectPath": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj",
+        "packagesPath": "C:\\Users\\Dimitrije\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\janko\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dimitrije\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -63,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
