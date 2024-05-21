@@ -48,7 +48,8 @@ namespace OOT_PZ_Kursevi
             Nazivtb.Text = k.Naziv;
             Opistb.Text = k.Opis;
             Cenatb.Text = k.Cena.ToString();
-            Ikonicatb.Text = k.SlikaPath;
+            newPath = Ikonicatb.Text = k.SlikaPath;
+
             KategorijeCB.Text = k.Kategorija;
             
 
