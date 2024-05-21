@@ -456,10 +456,10 @@ namespace OOT_PZ_Kursevi
 
             for (int i = 0; i < kurseviOdredjeneKategorije.Count; ++i)
             {
-                
-                worksheet.Cells[i + 2, 1] = kurseviOdredjeneKategorije[i].SlikaPath;
-                if (maksDuzinaPolja[brojacDuzina] < kurseviOdredjeneKategorije[i].SlikaPath.Length)
-                    maksDuzinaPolja[brojacDuzina] = kurseviOdredjeneKategorije[i].SlikaPath.Length;
+                string slika = "\\photos\\" + System.IO.Path.GetFileName(kurseviOdredjeneKategorije[i].SlikaPath);
+                worksheet.Cells[i + 2, 1] = slika;
+                if (maksDuzinaPolja[brojacDuzina] < slika.Length)
+                    maksDuzinaPolja[brojacDuzina] = slika.Length;
                 brojacDuzina++;
 
                 worksheet.Cells[i + 2, 2] = kurseviOdredjeneKategorije[i].ID.ToString();
@@ -486,7 +486,7 @@ namespace OOT_PZ_Kursevi
                 if (maksDuzinaPolja[brojacDuzina] < kurseviOdredjeneKategorije[i].Dostupnost.Length)
                     maksDuzinaPolja[brojacDuzina] = kurseviOdredjeneKategorije[i].Dostupnost.Length;
                 brojacDuzina++;
-
+                    
                 worksheet.Cells[i + 2, 7] = kurseviOdredjeneKategorije[i].Opis;
                 if (maksDuzinaPolja[brojacDuzina] < kurseviOdredjeneKategorije[i].Opis.Length)
                     maksDuzinaPolja[brojacDuzina] = kurseviOdredjeneKategorije[i].Opis.Length;

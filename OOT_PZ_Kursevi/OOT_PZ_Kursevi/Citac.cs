@@ -31,8 +31,10 @@ namespace OOT_PZ_Kursevi
             {
                 string[] polja = line.Split(":;:");
 
+                string path = polja[4];
 
-                string path = Environment.CurrentDirectory + polja[4];
+                if (!System.IO.Path.Exists(path))
+                    path = Environment.CurrentDirectory + polja[4];
                 
 
                 Kurs k = new Kurs(Convert.ToInt32(polja[0]), polja[1], polja[2], Convert.ToDouble(polja[3]), path, polja[5],
@@ -93,7 +95,11 @@ namespace OOT_PZ_Kursevi
 
                 string[] polja = line.Split(":;:");
 
-                string path = Environment.CurrentDirectory + polja[3];
+                string path = polja[3];
+
+                if (!System.IO.Path.Exists(path))
+                    path = Environment.CurrentDirectory + polja[3];
+
 
                 Kategorija k = new Kategorija(Convert.ToInt32(polja[0]), polja[1], polja[2],  path);
                 
