@@ -182,16 +182,20 @@ namespace OOT_PZ_Kursevi
 
         private void PopuniTreeView()
         {
+
             Dictionary<int, Kategorija> kategorije = citac.ucitajKategorije();
             foreach(var k in kategorije)
             {
-                TreeViewItem kategorijaNode = NapraviTreeViewItem(k.Value.Naziv, k.Value.Slika);
+                BitmapImage kategorijaSlika = new BitmapImage(new Uri(k.Value.SlikaPath, UriKind.RelativeOrAbsolute));
+                TreeViewItem kategorijaNode = NapraviTreeViewItem(k.Value.Naziv, kategorijaSlika);
+                
                 Dictionary<int, Kurs> kursevi = citac.ucitajKurseve();
                 foreach (var kurs in kursevi)
                 {
                     if (k.Value.Naziv == kurs.Value.Kategorija)
                     {
-                        TreeViewItem kursNode = NapraviTreeViewItem(kurs.Value.Naziv, kurs.Value.Slika);
+                        BitmapImage kursSlika = new BitmapImage(new Uri(kurs.Value.SlikaPath, UriKind.RelativeOrAbsolute));
+                        TreeViewItem kursNode = NapraviTreeViewItem(kurs.Value.Naziv, kursSlika);
                         kategorijaNode.Items.Add(kursNode);
                     }
                 }
@@ -207,8 +211,8 @@ namespace OOT_PZ_Kursevi
 
             Image image = new Image();
             image.Source = imageSource;
-            image.Width = 16; 
-            image.Height = 16; 
+            image.Width = 30; 
+            image.Height = 50; 
             image.Margin = new Thickness(0, 0, 5, 0); 
 
             TextBlock textBlock = new TextBlock();
