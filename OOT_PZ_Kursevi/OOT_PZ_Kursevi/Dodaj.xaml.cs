@@ -50,7 +50,12 @@ namespace OOT_PZ_Kursevi
 
 
             if (ofd.ShowDialog() == true)
-                Ikonicatb.Text = System.IO.Path.GetFullPath(ofd.FileName);
+            {
+                string[] imeSlike = ofd.FileName.Split('\\');
+                int count = imeSlike.Count();
+                string noviPathSlike = "\\photos\\" + imeSlike[count - 1];
+                Ikonicatb.Text = noviPathSlike;
+            }
             
 
         }

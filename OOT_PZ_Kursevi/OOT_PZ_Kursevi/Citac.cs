@@ -31,7 +31,11 @@ namespace OOT_PZ_Kursevi
             {
                 string[] polja = line.Split(":;:");
 
-                Kurs k = new Kurs(Convert.ToInt32(polja[0]), polja[1], polja[2], Convert.ToDouble(polja[3]), polja[4], polja[5],
+
+                string path = Environment.CurrentDirectory + polja[4];
+                
+
+                Kurs k = new Kurs(Convert.ToInt32(polja[0]), polja[1], polja[2], Convert.ToDouble(polja[3]), path, polja[5],
                                   (polja[6].ToLower() == "true" ? true : false));
 
                 if (!kursevi.ContainsKey(k.getId()))
@@ -89,7 +93,9 @@ namespace OOT_PZ_Kursevi
 
                 string[] polja = line.Split(":;:");
 
-                Kategorija k = new Kategorija(Convert.ToInt32(polja[0]), polja[1], polja[2],  polja[3]);
+                string path = Environment.CurrentDirectory + polja[3];
+
+                Kategorija k = new Kategorija(Convert.ToInt32(polja[0]), polja[1], polja[2],  path);
                 
                 if (!kategorije.ContainsKey(k.getId()))
                     kategorije.Add(k.getId(), k);

@@ -418,6 +418,8 @@ namespace OOT_PZ_Kursevi
 
             kurseviKategorijeTBl.Text = "KURSEVI KATEGORIJE \"" + nazivSelektovaneKategorije + "\"";
 
+
+
             nadjiKurseveOdredjeneKategorije();          
 
         }
