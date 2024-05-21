@@ -31,7 +31,11 @@ namespace OOT_PZ_Kursevi
             {
                 string[] polja = line.Split(":;:");
 
-                string path = Environment.CurrentDirectory + polja[4];
+                string path = polja[4];
+
+                if (!System.IO.Path.Exists(path))
+                    path = Environment.CurrentDirectory + polja[4];
+                    
 
                 Kurs k = new Kurs(Convert.ToInt32(polja[0]), polja[1], polja[2], Convert.ToDouble(polja[3]), path, polja[5],
                                   (polja[6].ToLower() == "true" ? true : false));
@@ -69,6 +73,17 @@ namespace OOT_PZ_Kursevi
 
         }
 
+        public ObservableCollection<Kurs> KursToObservableColection()
+        {
+            ObservableCollection<Kurs> kurs = new ObservableCollection<Kurs>();
+
+            foreach (int key in kursevi.Keys)
+                    kurs.Add(kursevi[key]);
+
+            return kurs;
+
+        }
+
         public Dictionary<int, Kategorija> ucitajKategorije()
         {
             string sadrzajDatoteke = File.ReadAllText(@"datoteke\kategorije.dat");
@@ -80,7 +95,11 @@ namespace OOT_PZ_Kursevi
 
                 string[] polja = line.Split(":;:");
 
-                string path = Environment.CurrentDirectory + polja[3];
+                string path = polja[3];
+
+                if (!System.IO.Path.Exists(path))
+                    path = Environment.CurrentDirectory + polja[3];
+
 
                 Kategorija k = new Kategorija(Convert.ToInt32(polja[0]), polja[1], polja[2],  path);
                 
@@ -91,7 +110,18 @@ namespace OOT_PZ_Kursevi
             return kategorije;
         }
 
-        
+        public ObservableCollection<Kategorija> KategorijaToObservableColection()
+        {
+            ObservableCollection<Kategorija> kate = new ObservableCollection<Kategorija>();
+
+            foreach (int key in kategorije.Keys)
+                    kate.Add(kategorije[key]);
+
+            return kate;
+
+        }
+
+
 
 
     }

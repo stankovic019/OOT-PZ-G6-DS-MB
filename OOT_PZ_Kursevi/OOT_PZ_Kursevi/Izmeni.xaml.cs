@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace OOT_PZ_Kursevi
 {
@@ -22,7 +23,7 @@ namespace OOT_PZ_Kursevi
         private Citac citac = new Citac();
 
         private Dictionary<int, Kategorija> kategorije = new Dictionary<int, Kategorija>();
-
+        private string newPath;
         private int id;
 
         public Izmeni(int id)
@@ -47,7 +48,8 @@ namespace OOT_PZ_Kursevi
             Nazivtb.Text = k.Naziv;
             Opistb.Text = k.Opis;
             Cenatb.Text = k.Cena.ToString();
-            Ikonicatb.Text = k.SlikaPath;
+            newPath = Ikonicatb.Text = k.SlikaPath;
+
             KategorijeCB.Text = k.Kategorija;
             
 
@@ -63,13 +65,20 @@ namespace OOT_PZ_Kursevi
         {
             OpenFileDialog ofd = new OpenFileDialog();
 
-            ofd.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp";
-
+            ofd.Filter = "JPG Files (*.jpg)|*.jpg|JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp";
 
 
             if (ofd.ShowDialog() == true)
-                Ikonicatb.Text = System.IO.Path.GetFullPath(ofd.FileName);
-            
+            {
+                string put = Environment.CurrentDirectory + "\\photos\\";
+
+                newPath = System.IO.Path.Combine(put, System.IO.Path.GetFileName(ofd.FileName));
+
+                File.Copy(ofd.FileName, newPath, true);
+
+                Ikonicatb.Text = "\\photos\\" + System.IO.Path.GetFileName(ofd.FileName);
+            }
+
         }
 
         private bool isDouble(string str)
@@ -106,7 +115,7 @@ namespace OOT_PZ_Kursevi
             kursevi[id].Naziv = Nazivtb.Text;
             kursevi[id].Opis = Opistb.Text;
             kursevi[id].Cena = Convert.ToDouble(Cenatb.Text);
-            kursevi[id].SlikaPath = Ikonicatb.Text;
+            kursevi[id].SlikaPath = newPath;
             kursevi[id].Kategorija = KategorijeCB.SelectedItem.ToString();
             kursevi[id].Dostupan = (DostupanRB.IsChecked == true ? true : false);
 

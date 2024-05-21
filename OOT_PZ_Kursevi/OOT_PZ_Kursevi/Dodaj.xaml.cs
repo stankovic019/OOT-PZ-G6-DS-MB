@@ -26,7 +26,7 @@ namespace OOT_PZ_Kursevi
         private Citac citac = new Citac();
         
         private Dictionary<int, Kategorija> kategorije = new Dictionary<int, Kategorija>();
-
+        private string newPath;
 
         public Dodaj()
         {
@@ -41,16 +41,25 @@ namespace OOT_PZ_Kursevi
 
         }
 
+
+
         private void browse(object sender, RoutedEventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
 
-            ofd.Filter = "JPG Files (*.jpg)|*.jpg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp";
-
+            ofd.Filter = "JPG Files (*.jpg)|*.jpg|JPEG Files (*.jpeg)|*.jpeg|PNG Files (*.png)|*.png|BMP Files (*.bmp)|*.bmp";
 
 
             if (ofd.ShowDialog() == true)
-                Ikonicatb.Text = System.IO.Path.GetFullPath(ofd.FileName);
+            {
+                string put = Environment.CurrentDirectory + "\\photos\\";
+
+                newPath = System.IO.Path.Combine(put, System.IO.Path.GetFileName(ofd.FileName));
+
+                File.Copy(ofd.FileName, newPath , true);
+
+                Ikonicatb.Text = "\\photos\\" + System.IO.Path.GetFileName(ofd.FileName);
+            }
             
 
         }
@@ -111,7 +120,7 @@ namespace OOT_PZ_Kursevi
 
 
             Kurs newK = new Kurs(Convert.ToInt32(IDtb.Text), Nazivtb.Text, Opistb.Text, Convert.ToDouble(Cenatb.Text),
-                                Ikonicatb.Text, KategorijeCB.SelectedItem.ToString(), 
+                                newPath, KategorijeCB.SelectedItem.ToString(), 
                                 (DostupanRB.IsChecked == true ? true : false));
 
             kursevi.Add(newK.getId(), newK);

@@ -47,7 +47,7 @@ namespace OOT_PZ_Kursevi
             this.slika.UriSource = new Uri(slikaPath, UriKind.RelativeOrAbsolute);
             this.slika.EndInit();
             this.dostupan = dostupan;
-            //verovatno kasnije treba dodati ocitavanje slike
+           
         }
         #endregion
 
@@ -155,7 +155,11 @@ namespace OOT_PZ_Kursevi
                 }
             } 
         }
-      
+        
+        public string Dostupnost
+        {
+            get { return dostupan == true ? "Dostupan" : "Nedostupan"; }
+        }
 
 
         #endregion

@@ -45,7 +45,7 @@ namespace OOT_PZ_Kursevi
 
         #region PROPERTY
         public int getId() { return id; }  //id je jedinstven sto znaci da ne moze da se ponovo setuje van konstruktora
-                                           //kao geter metoda je da se ne bi mesao sa propertijima
+                                            //kao geter metoda je da se ne bi mesao sa propertijima
 
         public int ID { get { return id; } }
 
