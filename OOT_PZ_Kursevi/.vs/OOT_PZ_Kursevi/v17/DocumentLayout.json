@@ -1,14 +1,38 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\",
+  "WorkspaceRootPath": "C:\\Users\\janko\\OneDrive\\Dokumenti\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|c:\\users\\dimitrije\\documents\\github\\oot-pz-g6-ds-mb\\oot_pz_kursevi\\oot_pz_kursevi\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|c:\\users\\janko\\onedrive\\dokumenti\\github\\oot-pz-g6-ds-mb\\oot_pz_kursevi\\oot_pz_kursevi\\potvrdi.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|solutionrelative:oot_pz_kursevi\\potvrdi.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|c:\\users\\janko\\onedrive\\dokumenti\\github\\oot-pz-g6-ds-mb\\oot_pz_kursevi\\oot_pz_kursevi\\potvrdi.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|solutionrelative:oot_pz_kursevi\\potvrdi.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|c:\\users\\janko\\onedrive\\dokumenti\\github\\oot-pz-g6-ds-mb\\oot_pz_kursevi\\oot_pz_kursevi\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|solutionrelative:oot_pz_kursevi\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|c:\\users\\janko\\onedrive\\dokumenti\\github\\oot-pz-g6-ds-mb\\oot_pz_kursevi\\oot_pz_kursevi\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|solutionrelative:oot_pz_kursevi\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|c:\\users\\dimitrije\\documents\\github\\oot-pz-g6-ds-mb\\oot_pz_kursevi\\oot_pz_kursevi\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|solutionrelative:oot_pz_kursevi\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|c:\\users\\janko\\onedrive\\dokumenti\\github\\oot-pz-g6-ds-mb\\oot_pz_kursevi\\oot_pz_kursevi\\kurs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|solutionrelative:oot_pz_kursevi\\kurs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|c:\\users\\janko\\onedrive\\dokumenti\\github\\oot-pz-g6-ds-mb\\oot_pz_kursevi\\oot_pz_kursevi\\pisac.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|solutionrelative:oot_pz_kursevi\\pisac.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|c:\\users\\janko\\onedrive\\dokumenti\\github\\oot-pz-g6-ds-mb\\oot_pz_kursevi\\oot_pz_kursevi\\citac.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|solutionrelative:oot_pz_kursevi\\citac.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|c:\\users\\janko\\onedrive\\dokumenti\\github\\oot-pz-g6-ds-mb\\oot_pz_kursevi\\oot_pz_kursevi\\kategorija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{577BDB93-2D1D-44DE-8157-C8252360A9BF}|OOT_PZ_Kursevi\\OOT_PZ_Kursevi.csproj|solutionrelative:oot_pz_kursevi\\kategorija.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +47,102 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Potvrdi.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\janko\\OneDrive\\Dokumenti\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\Potvrdi.xaml.cs",
+              "RelativeDocumentMoniker": "OOT_PZ_Kursevi\\Potvrdi.xaml.cs",
+              "ToolTip": "C:\\Users\\janko\\OneDrive\\Dokumenti\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\Potvrdi.xaml.cs",
+              "RelativeToolTip": "OOT_PZ_Kursevi\\Potvrdi.xaml.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-21T17:21:25.398Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Potvrdi.xaml",
+              "DocumentMoniker": "C:\\Users\\janko\\OneDrive\\Dokumenti\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\Potvrdi.xaml",
+              "RelativeDocumentMoniker": "OOT_PZ_Kursevi\\Potvrdi.xaml",
+              "ToolTip": "C:\\Users\\janko\\OneDrive\\Dokumenti\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\Potvrdi.xaml",
+              "RelativeToolTip": "OOT_PZ_Kursevi\\Potvrdi.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-21T17:18:47.731Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Pisac.cs",
+              "DocumentMoniker": "C:\\Users\\janko\\OneDrive\\Dokumenti\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\Pisac.cs",
+              "RelativeDocumentMoniker": "OOT_PZ_Kursevi\\Pisac.cs",
+              "ToolTip": "C:\\Users\\janko\\OneDrive\\Dokumenti\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\Pisac.cs",
+              "RelativeToolTip": "OOT_PZ_Kursevi\\Pisac.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-21T17:15:55.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\janko\\OneDrive\\Dokumenti\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "OOT_PZ_Kursevi\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\janko\\OneDrive\\Dokumenti\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\MainWindow.xaml",
+              "RelativeToolTip": "OOT_PZ_Kursevi\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-05-18T12:53:39.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\janko\\OneDrive\\Dokumenti\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "OOT_PZ_Kursevi\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\janko\\OneDrive\\Dokumenti\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\MainWindow.xaml.cs",
               "RelativeToolTip": "OOT_PZ_Kursevi\\MainWindow.xaml.cs",
-              "ViewState": "AQIAAFkAAAAAAAAAAAASwB4AAAAMAAAA",
+              "ViewState": "AQIAAAkBAAAAAAAAAAAcwBcBAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-18T13:42:15.999Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "OOT_PZ_Kursevi\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\Dimitrije\\Documents\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\MainWindow.xaml",
-              "RelativeToolTip": "OOT_PZ_Kursevi\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-05-18T12:53:39.57Z",
+              "DocumentIndex": 4,
+              "Title": "Kurs.cs",
+              "DocumentMoniker": "C:\\Users\\janko\\OneDrive\\Dokumenti\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\Kurs.cs",
+              "RelativeDocumentMoniker": "OOT_PZ_Kursevi\\Kurs.cs",
+              "ToolTip": "C:\\Users\\janko\\OneDrive\\Dokumenti\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\Kurs.cs",
+              "RelativeToolTip": "OOT_PZ_Kursevi\\Kurs.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-19T23:38:08.293Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Kategorija.cs",
+              "DocumentMoniker": "C:\\Users\\janko\\OneDrive\\Dokumenti\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\Kategorija.cs",
+              "RelativeDocumentMoniker": "OOT_PZ_Kursevi\\Kategorija.cs",
+              "ToolTip": "C:\\Users\\janko\\OneDrive\\Dokumenti\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\Kategorija.cs",
+              "RelativeToolTip": "OOT_PZ_Kursevi\\Kategorija.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAC0AAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-19T23:38:09.901Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Citac.cs",
+              "DocumentMoniker": "C:\\Users\\janko\\OneDrive\\Dokumenti\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\Citac.cs",
+              "RelativeDocumentMoniker": "OOT_PZ_Kursevi\\Citac.cs",
+              "ToolTip": "C:\\Users\\janko\\OneDrive\\Dokumenti\\GitHub\\OOT-PZ-G6-DS-MB\\OOT_PZ_Kursevi\\OOT_PZ_Kursevi\\Citac.cs",
+              "RelativeToolTip": "OOT_PZ_Kursevi\\Citac.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAYwC4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-19T23:38:03.955Z"
             }
           ]
         }

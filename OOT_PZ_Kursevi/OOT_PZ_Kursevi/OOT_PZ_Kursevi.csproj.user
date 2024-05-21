@@ -13,6 +13,9 @@
     <Compile Update="Izmeni.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Potvrdi.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Dodaj.xaml">
@@ -22,6 +25,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Potvrdi.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -12,7 +12,7 @@ using System.Windows.Controls;
 
 namespace OOT_PZ_Kursevi
 {
-    class Kurs : INotifyPropertyChanged
+    public class Kurs : INotifyPropertyChanged
     {
 
 
