@@ -1,4 +1,4 @@
 1. kada push-uješ na feature/tab2 u description mi napisi
 	sta si izmenila, tj. koje sve fajlove
-	da li samo xaml ili i xaml.cs
+	da li samo xaml ili i xaml.cs 
 	da bih znao kako i sta da menjam tokom merge sa mainom

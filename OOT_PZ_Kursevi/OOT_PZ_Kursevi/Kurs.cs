@@ -22,6 +22,7 @@ namespace OOT_PZ_Kursevi
         private string opis;
         private double cena;
         private string slikaPath;
+        private string slikaIme;
         private string kategorija;
         private bool dostupan;
         BitmapImage slika;
@@ -47,6 +48,7 @@ namespace OOT_PZ_Kursevi
             this.slika.UriSource = new Uri(slikaPath, UriKind.RelativeOrAbsolute);
             this.slika.EndInit();
             this.dostupan = dostupan;
+            this.slikaIme = System.IO.Path.GetFileName(slikaPath);
            
         }
         #endregion
@@ -174,8 +176,8 @@ namespace OOT_PZ_Kursevi
 
        public string toDat()
         {
-            string str = this.id.ToString() + ":;:" + this.naziv + ":;:" + this.opis + ":;:" + this.cena.ToString() + ":;:"
-                         + this.slikaPath + ":;:" + this.kategorija + ":;:" + this.dostupan.ToString() + "\r\n";
+            string str = this.id.ToString() + ":;:" + this.naziv + ":;:" + this.opis + ":;:" + this.cena.ToString() + ":;:\\photos\\"
+                         + this.slikaIme + ":;:" + this.kategorija + ":;:" + this.dostupan.ToString() + "\r\n";
 
             return str;
         }
