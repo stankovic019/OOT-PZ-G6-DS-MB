@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:OOT_PZ_Kursevi"
         mc:Ignorable="d"
 
-        Title="Organizacija Kurseva" Height="1080" Width="1920"
+        Title="Kurs+" Height="1080" Width="1920"
         WindowState="Maximized" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Closed="Window_Closed"
-        ShowInTaskbar="True" ScrollViewer.CanContentScroll="True">
+        ShowInTaskbar="True" ScrollViewer.CanContentScroll="True" Icon="/kursplus.jpg">
 
 
 
@@ -172,7 +172,10 @@
 
                                 </DataGrid>
                             </ScrollViewer>
-                        </Grid>
+
+                            <Image Grid.Row="2"  Source="/kursplus.jpg" HorizontalAlignment="Right" Margin="0 10 0 5"/>
+
+                    </Grid>
 
                         <Grid Grid.Row="1" Grid.ColumnSpan="3">
 
@@ -191,11 +194,13 @@
 
                         </Grid>
                     
+                    
+                    
                 </Grid>
 
             </TabItem>
 
-            <TabItem Header="Izaberi kurs i prijavi se">
+            <TabItem Header="Prijavi se">
                 <Grid Margin="20 20 20 20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
@@ -350,6 +355,8 @@
 
                         <Button Grid.Column="1" Margin="0 10" Content="IZVEZI KURSEVE" FontWeight="DemiBold" Click="exportToExcel"
                                 x:Name="exportBtn"/>
+
+                        <Image Grid.Column="2" Source="/kursplus.jpg" Margin="0 5 20 0" HorizontalAlignment="Right"/>
 
                     </Grid>
                     

@@ -22,6 +22,7 @@ namespace OOT_PZ_Kursevi
         private Dictionary<int, Kurs> kursevi = new Dictionary<int, Kurs>();
         private Citac citac = new Citac();
         private string newPath;
+        private bool promenjenaSlika = false;
         private Dictionary<int, Kategorija> kategorije = new Dictionary<int, Kategorija>();
         private int id;
 
@@ -73,9 +74,18 @@ namespace OOT_PZ_Kursevi
 
                     newPath = System.IO.Path.Combine(put, System.IO.Path.GetFileName(ofd.FileName));
 
-                    File.Copy(ofd.FileName, newPath, true);
+                    try
+                    {
+                        //u slucaju da pokusa da overwrite-uje fajl koji vec postoji u \photos folderu
+                        //da ne bi pucao program samo izbegnemo tu mogucnostbuduci da selektovana slika
+                        //vec postoji u folderu
+                        File.Copy(ofd.FileName, newPath, true);
 
-                    Ikonicatb.Text = "\\photos\\" + System.IO.Path.GetFileName(ofd.FileName);
+                    }
+                    catch (Exception) { }
+                        Ikonicatb.Text = "\\photos\\" + System.IO.Path.GetFileName(ofd.FileName);
+
+                        promenjenaSlika = true;
                 }
             }catch(Exception ) { }
 
@@ -115,7 +125,7 @@ namespace OOT_PZ_Kursevi
             kursevi[id].Naziv = Nazivtb.Text;
             kursevi[id].Opis = Opistb.Text;
             kursevi[id].Cena = Convert.ToDouble(Cenatb.Text);
-            if(newPath != "")
+            if(promenjenaSlika)
                 kursevi[id].SlikaPath = newPath;
             kursevi[id].Kategorija = KategorijeCB.SelectedItem.ToString();
             kursevi[id].Dostupan = (DostupanRB.IsChecked == true ? true : false);

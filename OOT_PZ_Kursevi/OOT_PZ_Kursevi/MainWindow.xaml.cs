@@ -22,7 +22,8 @@ namespace OOT_PZ_Kursevi
         private Dictionary<int, Kurs> kursevi = new Dictionary<int, Kurs>();
         private ObservableCollection<Kurs> dostupniKursevi = new ObservableCollection<Kurs> ();
         private ObservableCollection<Kurs> nedostupniKursevi = new ObservableCollection<Kurs> ();
-        private ObservableCollection<Kurs> odredjeniKursevi = new ObservableCollection<Kurs>();
+        private ObservableCollection<Kurs> odredjeniKurseviD = new ObservableCollection<Kurs>();
+        private ObservableCollection<Kurs> odredjeniKurseviN = new ObservableCollection<Kurs>();
         private ObservableCollection<Kurs> Korp { get; set; } = new ObservableCollection<Kurs>();
         private bool searchOn = false;
         private bool ignoreIndexChange = false;
@@ -48,6 +49,9 @@ namespace OOT_PZ_Kursevi
             dostupniKursevi = citac.KursToObservableColection(true);
             dostupniKurseviDGV.ItemsSource = dostupniKursevi;
 
+            nedostupniKursevi = citac.KursToObservableColection(false);
+            nedostupniKurseviDGV.ItemsSource = nedostupniKursevi;
+
             if (searchOn) //ako je izmenjeno tokom pretrage treba ga vratiti na pretragu
             {   
                 //buduci da mi ne dozvoljava da samo pozovem "text changed" event
@@ -57,8 +61,6 @@ namespace OOT_PZ_Kursevi
                 pretragaDostupnihTB.Text = str;
             }
 
-            nedostupniKursevi = citac.KursToObservableColection(false);
-            nedostupniKurseviDGV.ItemsSource = nedostupniKursevi;
             izmeniKursB.IsEnabled = obrisiKursB.IsEnabled = false;
         }
 
@@ -95,14 +97,22 @@ namespace OOT_PZ_Kursevi
                 }
                 else
                 {
-                    id = odredjeniKursevi[dostupniKurseviDGV.SelectedIndex].ID;
+                    id = odredjeniKurseviD[dostupniKurseviDGV.SelectedIndex].ID;
                     dostupniKurseviDGV.SelectedIndex = -1;
                 }
             }
             else if (nedostupniKurseviDGV.SelectedIndex != -1)
             {
-                id = nedostupniKursevi[nedostupniKurseviDGV.SelectedIndex].ID;
-                nedostupniKurseviDGV.SelectedIndex = -1;
+                if (!searchOn)
+                {
+                    id = nedostupniKursevi[nedostupniKurseviDGV.SelectedIndex].ID;
+                    nedostupniKurseviDGV.SelectedIndex = -1;
+                }
+                else
+                {
+                    id = odredjeniKurseviN[nedostupniKurseviDGV.SelectedIndex].ID;
+                    nedostupniKurseviDGV.SelectedIndex = -1;
+                }
             }
 
             try
@@ -209,11 +219,13 @@ namespace OOT_PZ_Kursevi
         private void pretragaDostupnihTB_TextChanged(object sender, TextChangedEventArgs e)
         {
             searchOn = true;
-            odredjeniKursevi.Clear();
+            odredjeniKurseviD.Clear();
+            odredjeniKurseviN.Clear();
 
             if(pretragaDostupnihTB.Text == "")
             {
                 dostupniKurseviDGV.ItemsSource = dostupniKursevi;
+                nedostupniKurseviDGV.ItemsSource = nedostupniKursevi;
                 searchOn = false;
                 return;
 
@@ -228,10 +240,24 @@ namespace OOT_PZ_Kursevi
                     parametarPretrazivanja = k.Kategorija.ToLower();
 
                 if (parametarPretrazivanja.StartsWith(pretragaDostupnihTB.Text.ToLower()))
-                    odredjeniKursevi.Add(k);
+                    odredjeniKurseviD.Add(k);
             }
 
-            dostupniKurseviDGV.ItemsSource = odredjeniKursevi;
+            dostupniKurseviDGV.ItemsSource = odredjeniKurseviD;
+
+            foreach (Kurs k in nedostupniKursevi)
+            {
+                string parametarPretrazivanja = "";
+                if (pretragaNazivRB.IsChecked == true)
+                    parametarPretrazivanja = k.Naziv.ToLower();
+                else if (pretragaKategorijaRB.IsChecked == true)
+                    parametarPretrazivanja = k.Kategorija.ToLower();
+
+                if (parametarPretrazivanja.StartsWith(pretragaDostupnihTB.Text.ToLower()))
+                    odredjeniKurseviN.Add(k);
+            }
+
+            nedostupniKurseviDGV.ItemsSource = odredjeniKurseviN;
 
         }
 
@@ -254,6 +280,13 @@ namespace OOT_PZ_Kursevi
         //DOSTUPNI KURSEVI
         private void dropToDostupni(int nedostupanSelectedIndex)
         {
+
+            if (searchOn)
+            {
+                MessageBox.Show("\"Prevuci i pusti\" opcija nije dozvoljena tokom pretrage.", "Zabranjena opcija", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
 
             nedostupniKursevi[nedostupanSelectedIndex].Dostupan = true;
             kursevi[nedostupniKursevi[nedostupanSelectedIndex].ID].Dostupan = true;
@@ -317,6 +350,13 @@ namespace OOT_PZ_Kursevi
         //NEDOSTUPNI KURSEVI
         private void dropToNedostupni(int dostupanSelectedIndex) {
 
+            if (searchOn)
+            {
+                MessageBox.Show("\"Prevuci i pusti\" opcija nije dozvoljena tokom pretrage.", "Zabranjena opcija", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+
             dostupniKursevi[dostupanSelectedIndex].Dostupan = false;
             kursevi[dostupniKursevi[dostupanSelectedIndex].ID].Dostupan = false;
             nedostupniKursevi.Add(dostupniKursevi[dostupanSelectedIndex]);
@@ -378,6 +418,7 @@ namespace OOT_PZ_Kursevi
         private Dictionary<int, Kategorija> kategorijeTab3 = new Dictionary<int, Kategorija>();
         private ObservableCollection<Kategorija> kategorijeCollection = new ObservableCollection<Kategorija>();
         private ObservableCollection<Kurs> kurseviOdredjeneKategorije = new ObservableCollection<Kurs>();
+        private string exportMsg = "Exported by: Kurs+ © Dimitrije Stankovic, Maja Bogicevic 2024.";
         private void inicijalizujTab3()
         {
 
@@ -508,6 +549,8 @@ namespace OOT_PZ_Kursevi
             worksheet.Columns[6].ColumnWidth = maksDuzinaPolja[5];
             worksheet.Columns[7].ColumnWidth = maksDuzinaPolja[6];
 
+
+            worksheet.Cells[kurseviOdredjeneKategorije.Count + 3, 1] = exportMsg;
             this.WindowState = WindowState.Minimized;
             app.WindowState = Microsoft.Office.Interop.Excel.XlWindowState.xlMaximized;
             app.ActiveWindow.Activate();
@@ -570,6 +613,7 @@ namespace OOT_PZ_Kursevi
             worksheet.Columns[3].ColumnWidth = maksDuzinaPolja[2];
             worksheet.Columns[4].ColumnWidth = maksDuzinaPolja[3];
 
+            worksheet.Cells[kategorijeCollection.Count + 3, 1] = exportMsg;
             this.WindowState = WindowState.Minimized;
             app.WindowState = Microsoft.Office.Interop.Excel.XlWindowState.xlMaximized;
             app.ActiveWindow.Activate();
