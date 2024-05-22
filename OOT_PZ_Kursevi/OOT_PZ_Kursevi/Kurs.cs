@@ -113,6 +113,7 @@ namespace OOT_PZ_Kursevi
 
                     this.slika.UriSource = new Uri(slikaPath, UriKind.RelativeOrAbsolute);
                     this.slika.EndInit();
+                    this.slikaIme = System.IO.Path.GetFileName(slikaPath);
                     this.NotifyPropertyChanged("SlikaPath");
                 }
             }

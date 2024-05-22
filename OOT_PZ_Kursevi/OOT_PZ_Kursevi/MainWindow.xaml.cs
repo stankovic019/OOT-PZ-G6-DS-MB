@@ -128,7 +128,12 @@ namespace OOT_PZ_Kursevi
 
         private void obrisiKurs(object sender, RoutedEventArgs e)
         {
-
+            if(dostupniKurseviDGV.SelectedIndex == -1 && nedostupniKurseviDGV.SelectedIndex == -1)
+            {
+                MessageBox.Show("Izaberite kurs koji želite da obrišete!", "Greška: nije selektovan kurs", MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+                return;
+            }
             if (MessageBox.Show("Da li zaista želite da obrišete izabrani kurs?\n" +
                                 "NAPOMENA: Ova operacija se ne može opozvati. Obrisani kurs ćete morati da vratite ručno!",
                                 "Obriši kurs?", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)

@@ -41,7 +41,7 @@
                                     VerticalAlignment="Center"/>
 
 
-                        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
                             <DataGrid x:Name="dostupniKurseviDGV" IsReadOnly="True" GridLinesVisibility="Horizontal" 
                                       AutoGenerateColumns="False" Margin="0 0 0 20" AlternationCount="2"
                                       VerticalContentAlignment="Center" SelectionChanged="dostupniKurseviDGV_SelectionChanged"
@@ -129,7 +129,7 @@
 
                             <TextBlock Text="NEDOSTUPNI KURSEVI" FontWeight="Bold" FontSize="26" Grid.Row="0" FontStyle="Italic"
                                    VerticalAlignment="Center"/>
-                            <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                            <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
                                 <DataGrid x:Name="nedostupniKurseviDGV" IsReadOnly="True" GridLinesVisibility="Horizontal" 
                                  AutoGenerateColumns="False" Grid.Row="1" Margin="0 0 0 20" AlternationCount="2" 
                                   SelectionChanged="nedostupniKurseviDGV_SelectionChanged" ItemsSource="{Binding nedostupniStudenti}"
