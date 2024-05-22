@@ -512,8 +512,71 @@ namespace OOT_PZ_Kursevi
             app.WindowState = Microsoft.Office.Interop.Excel.XlWindowState.xlMaximized;
             app.ActiveWindow.Activate();
 
-        } 
-            
+        }
+
+        private void exportToExcelKat(object sender, RoutedEventArgs e)
+        {
+
+            Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
+
+            Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
+
+            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+
+            app.Visible = true;
+
+            worksheet = workbook.Sheets["Sheet1"];
+            worksheet = workbook.ActiveSheet;
+
+            worksheet.Name = "SVE_KATEGORIJE_EXPORTED";
+
+            int[] maksDuzinaPolja = new int[kategorijeCollection.Count];
+            worksheet.Cells[1, 1] = "iconPath";
+            maksDuzinaPolja[0] = (new String("iconPath").Length);
+            for (int i = 2; i < kategorijeKursevaDGV.Columns.Count + 1; i++)
+            {
+                worksheet.Cells[1, i] = kategorijeKursevaDGV.Columns[i - 1].Header.ToString();
+                maksDuzinaPolja[i - 1] = kategorijeKursevaDGV.Columns[i - 1].Header.ToString().Length;
+            }
+
+            int brojacDuzina = 0;
+
+            for (int i = 0; i < kategorijeCollection.Count; ++i)
+            {
+                string slika = "\\photos\\" + System.IO.Path.GetFileName(kategorijeCollection[i].SlikaPath);
+                worksheet.Cells[i + 2, 1] = slika;
+                if (maksDuzinaPolja[brojacDuzina] < slika.Length)
+                    maksDuzinaPolja[brojacDuzina] = slika.Length;
+                brojacDuzina++;
+
+                worksheet.Cells[i + 2, 2] = kategorijeCollection[i].ID.ToString();
+                if (maksDuzinaPolja[brojacDuzina] < kategorijeCollection[i].ID.ToString().Length)
+                    maksDuzinaPolja[brojacDuzina] = kategorijeCollection[i].ID.ToString().Length;
+                brojacDuzina++;
+
+                worksheet.Cells[i + 2, 3] = kategorijeCollection[i].Naziv;
+                if (maksDuzinaPolja[brojacDuzina] < kategorijeCollection[i].Naziv.Length)
+                    maksDuzinaPolja[brojacDuzina] = kategorijeCollection[i].Naziv.Length;
+                brojacDuzina++;
+
+                worksheet.Cells[i + 2, 4] = kategorijeCollection[i].Opis;
+                if (maksDuzinaPolja[brojacDuzina] < kategorijeCollection[i].Opis.Length)
+                    maksDuzinaPolja[brojacDuzina] = kategorijeCollection[i].Opis.Length;
+                brojacDuzina = 0;
+            }
+
+            worksheet.Columns[1].ColumnWidth = maksDuzinaPolja[0];
+            worksheet.Columns[2].ColumnWidth = maksDuzinaPolja[1];
+            worksheet.Columns[3].ColumnWidth = maksDuzinaPolja[2];
+            worksheet.Columns[4].ColumnWidth = maksDuzinaPolja[3];
+
+            this.WindowState = WindowState.Minimized;
+            app.WindowState = Microsoft.Office.Interop.Excel.XlWindowState.xlMaximized;
+            app.ActiveWindow.Activate();
+
+
+        }
+
 
         private TreeViewItem NapraviTreeViewItem(string text, BitmapImage imageSource)
         { 
@@ -646,5 +709,6 @@ namespace OOT_PZ_Kursevi
 
         }
 
+       
     }
 }
