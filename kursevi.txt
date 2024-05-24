@@ -5,6 +5,7 @@
 1539950472:;:AI:;:Znacaj AI u modernom svetu:;:15999.99:;:\photos\ai.png:;:Seminar:;:True
 14566:;:Kurs kriminalistike:;:Kako je to biti forenzičar?:;:42000:;:\photos\kriminalistika.jpeg:;:Predavanja:;:False
 23232:;:Kurs programiranja:;:Razni programski jezici:;:6000:;:\photos\programiranje.jpeg:;:Vezbe:;:True
+16012021:;:Dresura pasa:;:"Ide PAS":;:10000:;:\photos\maks.jpg:;:Vezbe:;:True
 734723:;:Poslovna ekonomija:;:x:;:4269.99:;:\photos\ekonomija.jpg:;:Seminar:;:True
 75424:;:Kurs industrijske ekologije:;:x:;:1400:;:\photos\industrijska_ekologija.jpeg:;:Praksa:;:False
 57257:;:Kurs engleskog jezika:;:Profesor: Selma Bogičević:;:13600:;:\photos\engleski.jpg:;:Predavanja:;:True
