@@ -28,6 +28,8 @@ namespace OOT_PZ_Kursevi
             
         }
 
-        
+        private void Zatvori_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();        }
     }
 }

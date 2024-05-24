@@ -212,10 +212,10 @@
                         <RowDefinition Height="0.5*"/>
                     </Grid.RowDefinitions>
                     <TextBlock Text="Klinkite dva puta kurs na koji zelite da se prijavite" Margin="30 0 0 0" FontWeight="Bold"/>
-                    <TreeView x:Name="MyTreeView" Grid.Column="0" Grid.Row="0" FontSize="30" MouseDoubleClick="MyTreeView_MouseDoubleClick"  Background="#FFCCCCCC" Margin="30">
+                    <TreeView x:Name="MyTreeView" Grid.Column="0" Grid.Row="0" FontSize="30" MouseDoubleClick="MyTreeView_MouseDoubleClick"  Background="#EAF1FB" Margin="30">
                         
                     </TreeView>
-                    <ListView x:Name="Korpa" Grid.Row="0" Grid.Column="1"  Background="#FFCCCCCC" Margin="30" >
+                    <ListView x:Name="Korpa" Grid.Row="0" Grid.Column="1"  Background="#EAF1FB" Margin="30" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn Header="Naziv" DisplayMemberBinding="{Binding Naziv}" Width="270"/>

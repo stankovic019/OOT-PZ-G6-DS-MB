@@ -759,28 +759,6 @@ namespace OOT_PZ_Kursevi
             Application.Current.Shutdown();
 
         }
-       /* private Dictionary<int, Kategorija> kategorijeTab2 = new Dictionary<int, Kategorija>();
-        private Dictionary<int, Kurs> kurseviTab2 = new Dictionary<int, Kurs>();
-
-        private Dictionary<int, Kategorija> inicijalizujTab2Kategorija()
-        {
-            
-            kategorijeTab2 = citac.ucitajKategorije();
-            
-            return kategorijeTab2;
-
-         }
-
-        private Dictionary<int, Kurs> inicijalizujTab2Kurs()
-        {
-
-            kurseviTab2 = citac.ucitajKurseve();
-
-            return kurseviTab2;
-
-        }*/
-    }
-    
-
-    
+  
+    }  
 }
