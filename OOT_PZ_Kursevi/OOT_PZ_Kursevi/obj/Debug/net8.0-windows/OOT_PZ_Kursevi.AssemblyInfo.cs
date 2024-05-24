@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OOT_PZ_Kursevi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2287f06a907e7071ed329431436bfa5a8470721a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1fbe5fcd1e00ea3f5800f9c861adabe23446fc10")]
 [assembly: System.Reflection.AssemblyProductAttribute("OOT_PZ_Kursevi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OOT_PZ_Kursevi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

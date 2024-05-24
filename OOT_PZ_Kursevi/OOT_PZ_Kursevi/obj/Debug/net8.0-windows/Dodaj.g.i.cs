@@ -117,7 +117,7 @@ namespace OOT_PZ_Kursevi {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/OOT_PZ_Kursevi;V1.0.0.0;component/dodaj.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/OOT_PZ_Kursevi;component/dodaj.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Dodaj.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -151,12 +151,21 @@ namespace OOT_PZ_Kursevi
                                 "NAPOMENA: Ova operacija se ne može opozvati. Obrisani kurs ćete morati da vratite ručno!",
                                 "Obriši kurs?", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
+                if (!searchOn)
+                {
+                    if (dostupniKurseviDGV.SelectedIndex != -1)
+                        kursevi.Remove(dostupniKursevi[dostupniKurseviDGV.SelectedIndex].ID);
+                    else if (nedostupniKurseviDGV.SelectedIndex != -1)
+                        kursevi.Remove(nedostupniKursevi[nedostupniKurseviDGV.SelectedIndex].ID);
+                }
+                else if (searchOn)
+                {
+                    if(dostupniKurseviDGV.SelectedIndex != -1)
+                        kursevi.Remove(odredjeniKurseviD[dostupniKurseviDGV.SelectedIndex].ID);
+                    else if(nedostupniKurseviDGV.SelectedIndex != -1)
+                        kursevi.Remove(odredjeniKurseviN[nedostupniKurseviDGV.SelectedIndex].ID);
 
-                if (dostupniKurseviDGV.SelectedIndex != -1)
-                    kursevi.Remove(dostupniKursevi[dostupniKurseviDGV.SelectedIndex].ID);
-                else if (nedostupniKurseviDGV.SelectedIndex != -1)
-                    kursevi.Remove(nedostupniKursevi[nedostupniKurseviDGV.SelectedIndex].ID);
-
+                }
                 sacuvajTrenutnoStanje();
 
                 this.inicijalizujTab1();
