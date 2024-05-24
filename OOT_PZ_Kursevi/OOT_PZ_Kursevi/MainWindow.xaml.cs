@@ -79,8 +79,9 @@ namespace OOT_PZ_Kursevi
             Dodaj novi = new Dodaj();
             if (novi.ShowDialog() == true)
             {
-                inicijalizujTab1();
-                inicijalizujTab3();
+                this.inicijalizujTab1();
+                this.PopuniTreeView();
+                this.inicijalizujTab3();
             }
         }
 
@@ -124,6 +125,7 @@ namespace OOT_PZ_Kursevi
                 if (izmena.ShowDialog() == true)
                 {
                     this.inicijalizujTab1();
+                    this.PopuniTreeView();
                     this.inicijalizujTab3();
 
                 }
@@ -158,6 +160,7 @@ namespace OOT_PZ_Kursevi
                 sacuvajTrenutnoStanje();
 
                 this.inicijalizujTab1();
+                this.PopuniTreeView();
                 this.inicijalizujTab3();
 
             }
@@ -714,7 +717,7 @@ namespace OOT_PZ_Kursevi
 
         private void PopuniTreeView()
         {
-
+            MyTreeView.Items.Clear();
             Dictionary<int, Kategorija> kategorije = citac.ucitajKategorije();// inicijalizujTab2Kategorija();
             foreach (var k in kategorije)
             {
