@@ -15,13 +15,14 @@ using System.Diagnostics.Eventing.Reader;
 
 namespace OOT_PZ_Kursevi
 {
-    
+
     public partial class MainWindow : Window
     {
 
+
         private Dictionary<int, Kurs> kursevi = new Dictionary<int, Kurs>();
-        private ObservableCollection<Kurs> dostupniKursevi = new ObservableCollection<Kurs> ();
-        private ObservableCollection<Kurs> nedostupniKursevi = new ObservableCollection<Kurs> ();
+        private ObservableCollection<Kurs> dostupniKursevi = new ObservableCollection<Kurs>();
+        private ObservableCollection<Kurs> nedostupniKursevi = new ObservableCollection<Kurs>();
         private ObservableCollection<Kurs> odredjeniKurseviD = new ObservableCollection<Kurs>();
         private ObservableCollection<Kurs> odredjeniKurseviN = new ObservableCollection<Kurs>();
         private ObservableCollection<Kurs> Korp { get; set; } = new ObservableCollection<Kurs>();
@@ -39,7 +40,7 @@ namespace OOT_PZ_Kursevi
 
             //MAJA INICIJALIZACIJA
             PopuniTreeView();
-            
+
         }
         //funkcija za inicijalizaciju izgleda taba1
         //potrebno je ucitati promene
@@ -53,7 +54,7 @@ namespace OOT_PZ_Kursevi
             nedostupniKurseviDGV.ItemsSource = nedostupniKursevi;
 
             if (searchOn) //ako je izmenjeno tokom pretrage treba ga vratiti na pretragu
-            {   
+            {
                 //buduci da mi ne dozvoljava da samo pozovem "text changed" event
                 //morao sam zaobilaznim putem da ga "triggerujem"
                 string str = pretragaDostupnihTB.Text;
@@ -124,11 +125,11 @@ namespace OOT_PZ_Kursevi
                 {
                     this.inicijalizujTab1();
                     this.inicijalizujTab3();
-                
+
                 }
             }
-            catch(Exception) {
-                
+            catch (Exception) {
+
                 MessageBox.Show("Izaberite kurs koji želite da izmenite!", "Greška: nije selektovan kurs", MessageBoxButton.OK,
                     MessageBoxImage.Error);
 
@@ -138,7 +139,7 @@ namespace OOT_PZ_Kursevi
 
         private void obrisiKurs(object sender, RoutedEventArgs e)
         {
-            if(dostupniKurseviDGV.SelectedIndex == -1 && nedostupniKurseviDGV.SelectedIndex == -1)
+            if (dostupniKurseviDGV.SelectedIndex == -1 && nedostupniKurseviDGV.SelectedIndex == -1)
             {
                 MessageBox.Show("Izaberite kurs koji želite da obrišete!", "Greška: nije selektovan kurs", MessageBoxButton.OK,
                     MessageBoxImage.Error);
@@ -151,14 +152,14 @@ namespace OOT_PZ_Kursevi
 
                 if (dostupniKurseviDGV.SelectedIndex != -1)
                     kursevi.Remove(dostupniKursevi[dostupniKurseviDGV.SelectedIndex].ID);
-                else if(nedostupniKurseviDGV.SelectedIndex != -1)
+                else if (nedostupniKurseviDGV.SelectedIndex != -1)
                     kursevi.Remove(nedostupniKursevi[nedostupniKurseviDGV.SelectedIndex].ID);
 
                 sacuvajTrenutnoStanje();
 
                 this.inicijalizujTab1();
                 this.inicijalizujTab3();
-                    
+
             }
 
         }
@@ -166,7 +167,7 @@ namespace OOT_PZ_Kursevi
         private void dostupniKurseviDGV_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
-            if(ignoreIndexChange) return;
+            if (ignoreIndexChange) return;
 
             ignoreIndexChange = true;
 
@@ -185,8 +186,8 @@ namespace OOT_PZ_Kursevi
 
         private void nedostupniKurseviDGV_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-           
-            if(ignoreIndexChange) return;
+
+            if (ignoreIndexChange) return;
 
             ignoreIndexChange = true;
 
@@ -222,7 +223,7 @@ namespace OOT_PZ_Kursevi
             odredjeniKurseviD.Clear();
             odredjeniKurseviN.Clear();
 
-            if(pretragaDostupnihTB.Text == "")
+            if (pretragaDostupnihTB.Text == "")
             {
                 dostupniKurseviDGV.ItemsSource = dostupniKursevi;
                 nedostupniKurseviDGV.ItemsSource = nedostupniKursevi;
@@ -236,7 +237,7 @@ namespace OOT_PZ_Kursevi
                 string parametarPretrazivanja = "";
                 if (pretragaNazivRB.IsChecked == true)
                     parametarPretrazivanja = k.Naziv.ToLower();
-                else if(pretragaKategorijaRB.IsChecked == true)
+                else if (pretragaKategorijaRB.IsChecked == true)
                     parametarPretrazivanja = k.Kategorija.ToLower();
 
                 if (parametarPretrazivanja.StartsWith(pretragaDostupnihTB.Text.ToLower()))
@@ -300,16 +301,16 @@ namespace OOT_PZ_Kursevi
         }
 
         private void dostupniKurseviDGV_PreviewMouseMove(object sender, MouseEventArgs e)
-        {   
+        {
             var dg = sender as DataGrid;
             if (dg == null) return;
 
-           
+
             Point mousePos = e.GetPosition(null);
             double[] razlika = new double[2];
             razlika[0] = _startPoint.X - mousePos.X;
             razlika[1] = _startPoint.Y - mousePos.Y;
-          
+
             if (e.LeftButton == MouseButtonState.Pressed &&
                 (Math.Abs(razlika[0]) > SystemParameters.MinimumHorizontalDragDistance ||
                 Math.Abs(razlika[1]) > SystemParameters.MinimumVerticalDragDistance))
@@ -319,19 +320,19 @@ namespace OOT_PZ_Kursevi
 
                 if (DataGridRow == null)
                     return;
-                
+
                 var dataTodrop = (Kurs)dg.ItemContainerGenerator.
                     ItemFromContainer(DataGridRow);
 
                 if (dataTodrop == null) return;
- 
+
                 var dataObj = new DataObject(dataTodrop);
                 dataObj.SetData("DragSource", sender);
                 DragDrop.DoDragDrop(dg, dataObj, DragDropEffects.Copy);
-               
+
             }
         }
-       
+
         private void dostupniKurseviDGV_Drop(object sender, DragEventArgs e)
         {
             var dg = sender as DataGrid;
@@ -361,7 +362,7 @@ namespace OOT_PZ_Kursevi
             kursevi[dostupniKursevi[dostupanSelectedIndex].ID].Dostupan = false;
             nedostupniKursevi.Add(dostupniKursevi[dostupanSelectedIndex]);
             dostupniKursevi.RemoveAt(dostupanSelectedIndex);
-            
+
         }
         private void nedostupniKurseviDGV_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
@@ -410,10 +411,10 @@ namespace OOT_PZ_Kursevi
             try
             {
                 dropToNedostupni(dostupniKurseviDGV.SelectedIndex);
-            }catch (Exception) { }
+            } catch (Exception) { }
         }
 
-      
+
 
         private Dictionary<int, Kategorija> kategorijeTab3 = new Dictionary<int, Kategorija>();
         private ObservableCollection<Kategorija> kategorijeCollection = new ObservableCollection<Kategorija>();
@@ -430,7 +431,7 @@ namespace OOT_PZ_Kursevi
 
 
         }
-      
+
 
         private void nadjiKurseveOdredjeneKategorije()
         {
@@ -438,8 +439,8 @@ namespace OOT_PZ_Kursevi
             kurseviKategorijeDGV.ItemsSource = null;
             kurseviOdredjeneKategorije.Clear();
 
-            foreach(Kurs k in sviKursevi)
-                if(k.Kategorija == nazivSelektovaneKategorije)
+            foreach (Kurs k in sviKursevi)
+                if (k.Kategorija == nazivSelektovaneKategorije)
                     kurseviOdredjeneKategorije.Add(k);
 
             kurseviKategorijeDGV.ItemsSource = kurseviOdredjeneKategorije;
@@ -447,7 +448,7 @@ namespace OOT_PZ_Kursevi
 
 
 
-    
+
 
         private string nazivSelektovaneKategorije = "";
         private void kategorijeKursevaDGV_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -468,7 +469,7 @@ namespace OOT_PZ_Kursevi
 
 
 
-            nadjiKurseveOdredjeneKategorije();          
+            nadjiKurseveOdredjeneKategorije();
 
         }
 
@@ -621,17 +622,17 @@ namespace OOT_PZ_Kursevi
 
         }
 
-
+        //NAPRAVI TREEVIEW
         private TreeViewItem NapraviTreeViewItem(string text, BitmapImage imageSource)
-        { 
+        {
             StackPanel stackPanel = new StackPanel();
             stackPanel.Orientation = Orientation.Horizontal;
 
             Image image = new Image();
             image.Source = imageSource;
-            image.Width = 30; 
-            image.Height = 50; 
-            image.Margin = new Thickness(0, 0, 5, 0); 
+            image.Width = 30;
+            image.Height = 50;
+            image.Margin = new Thickness(0, 0, 5, 0);
 
             TextBlock textBlock = new TextBlock();
             textBlock.Text = text;
@@ -645,15 +646,15 @@ namespace OOT_PZ_Kursevi
             return treeViewItem;
         }
 
-        
-         
+
+
         private List<Kurs> GetSelectedCoursesFromTreeView(TreeView treeView)
         {
             var izabraniKursevi = new List<Kurs>();
-            foreach(var item in treeView.Items)
+            foreach (var item in treeView.Items)
             {
                 var treeViewItem = treeView.ItemContainerGenerator.ContainerFromItem(item) as TreeViewItem;
-                if(treeViewItem != null && treeViewItem.IsSelected)
+                if (treeViewItem != null && treeViewItem.IsSelected)
                 {
                     izabraniKursevi.Add(treeViewItem.DataContext as Kurs);
 
@@ -662,27 +663,29 @@ namespace OOT_PZ_Kursevi
             }
             return izabraniKursevi;
         }
-    
+
+        //BIRANJE KURSA ZA PRIJAVU
         private void GetSelectedCoursesFromTreeViewItem(TreeViewItem item, List<Kurs> izabraniKursevi)
         {
-            if(item == null)
+            if (item == null)
             {
                 return;
             }
-            
-                foreach(var item2 in item.Items)
-                {
-                    var subTreeViewItem = item.ItemContainerGenerator.ContainerFromItem(item2) as TreeViewItem;
-                if(subTreeViewItem != null && subTreeViewItem.IsSelected)
+
+            foreach (var item2 in item.Items)
+            {
+                var subTreeViewItem = item.ItemContainerGenerator.ContainerFromItem(item2) as TreeViewItem;
+                if (subTreeViewItem != null && subTreeViewItem.IsSelected)
                 {
 
                     izabraniKursevi.Add(subTreeViewItem.DataContext as Kurs);
                 }
                 GetSelectedCoursesFromTreeViewItem(subTreeViewItem, izabraniKursevi);
-                }
-            
+            }
+
         }
 
+        //PREBACIVANJE KURSA IZ TREEVIEW U LISTVIEW
         private void MyTreeView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
 
@@ -704,10 +707,7 @@ namespace OOT_PZ_Kursevi
                         MessageBox.Show($"Kurs je vec u korpi", "Kurs u korpi", MessageBoxButton.OK, MessageBoxImage.Warning);
                     }
                 }
-                else
-                {
-                    MessageBox.Show($"Nije selektovan kurs", "Kurs nije selektovan", MessageBoxButton.OK, MessageBoxImage.Warning);
-                }
+
             }
             Korpa.ItemsSource = Korp;
         }
@@ -715,13 +715,13 @@ namespace OOT_PZ_Kursevi
         private void PopuniTreeView()
         {
 
-            Dictionary<int, Kategorija> kategorije = citac.ucitajKategorije();
+            Dictionary<int, Kategorija> kategorije = citac.ucitajKategorije();// inicijalizujTab2Kategorija();
             foreach (var k in kategorije)
             {
                 ;
                 TreeViewItem kategorijaNode = NapraviTreeViewItem(k.Value.Naziv, k.Value.Slika);
 
-                Dictionary<int, Kurs> kursevi = citac.ucitajKurseve();
+                Dictionary<int, Kurs> kursevi = citac.ucitajKurseve();//inicijalizujTab2Kurs();
                 foreach (var kurs in kursevi)
                 {
                     if (k.Value.Naziv == kurs.Value.Kategorija)
@@ -740,7 +740,11 @@ namespace OOT_PZ_Kursevi
         private void Potvrdi_Click(object sender, RoutedEventArgs e)
         {
             var drugi_prozor = new Potvrdi(Korp);
-            drugi_prozor.Show();
+            if (drugi_prozor.ShowDialog() == false)
+            {
+                Korp.Clear();
+            }
+
         }
 
         private void Window_Closed(object sender, EventArgs e)
@@ -752,7 +756,28 @@ namespace OOT_PZ_Kursevi
             Application.Current.Shutdown();
 
         }
+       /* private Dictionary<int, Kategorija> kategorijeTab2 = new Dictionary<int, Kategorija>();
+        private Dictionary<int, Kurs> kurseviTab2 = new Dictionary<int, Kurs>();
 
-       
+        private Dictionary<int, Kategorija> inicijalizujTab2Kategorija()
+        {
+            
+            kategorijeTab2 = citac.ucitajKategorije();
+            
+            return kategorijeTab2;
+
+         }
+
+        private Dictionary<int, Kurs> inicijalizujTab2Kurs()
+        {
+
+            kurseviTab2 = citac.ucitajKurseve();
+
+            return kurseviTab2;
+
+        }*/
     }
+    
+
+    
 }

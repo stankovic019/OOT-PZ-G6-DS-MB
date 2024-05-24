@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OOT_PZ_Kursevi"
         mc:Ignorable="d"
-        Title="Potvrdi" Height="450" Width="400">
+        Title="Potvrdi" Height="450" Width="400"
+        x:Name="Potvrdi_Prozor">
     <Grid>
-        <ListView x:Name="Lista_Potvrdi" HorizontalAlignment="Center" VerticalAlignment="Center" Height="430" Width="400" Background="#FFBDBDBD" >
+        <ListView x:Name="Lista_Potvrdi" HorizontalAlignment="Center" VerticalAlignment="Center" Height="430" Width="400" Background="#FFBDBDBD"  >
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Naziv" DisplayMemberBinding="{Binding Naziv}" Width="200"/>

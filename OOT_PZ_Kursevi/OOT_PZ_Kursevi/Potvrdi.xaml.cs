@@ -20,10 +20,14 @@ namespace OOT_PZ_Kursevi
     /// </summary>
     public partial class Potvrdi : Window
     {
+        
         public Potvrdi(ObservableCollection<Kurs> selektovaniKursevi)
         {
             InitializeComponent();
             Lista_Potvrdi.ItemsSource = selektovaniKursevi;
+            
         }
+
+        
     }
 }
