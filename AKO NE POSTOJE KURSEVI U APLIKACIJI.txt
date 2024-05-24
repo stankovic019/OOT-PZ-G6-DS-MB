@@ -1,0 +1,19 @@
+Pri skidanju sa GitHub-a možda će se u folderu gde je .exe aplikacija 
+(bin\Debug\net8.0-windows\datoteke)
+obrisati svi kursevi, potrebno je datoteke 
+"kategorije.dat" i "kursevi.dat" otvoriti u Notepadu,
+i prekopirati u njih sadržaj iz datoteka
+"kategorije.txt" i "kursevi.txt".
+
+NE KOPIRATI same datoteke jer neće raditi.
+NE DODAVATI NIKAKVE RAZMAKE, TABOVE ILI NOVE REDOVE!
+Cilj .dat datoteka je upravo taj da se ne mogu 
+(i ne trebaju) otvarati normalno, ne znam zašto GitHub pravi problem.
+
+Zato je najbolje samo kliknuti u .txt datotekama
+CTRL + A
+CTRL + C
+potom otvoriti .dat datoteke u bin\Debug\net8.0-windows\datoteke
+i stisnuti CTRL + V :)
+
+Za poteškoće pozvati ili poslati poruku Whatsapp na 0612874475

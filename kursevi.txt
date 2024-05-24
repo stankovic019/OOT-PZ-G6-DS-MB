@@ -1,0 +1,25 @@
+128657:;:Preduzetnistvo:;:Otvorite svoj biznis cim pre!:;:3499.99:;:\photos\preduzetnistvo.jpg:;:Seminar:;:True
+2245001:;:Programski Jezik C:;:Uvod u teoriju programskog jezika C:;:4999.99:;:\photos\c.jpg:;:Predavanja:;:False
+593419:;:Programski Jezik C:;:Savladajte programski jezik C:;:6999.99:;:\photos\c.jpg:;:Vezbe:;:True
+113255509:;:Objektno Orijentisano Programiranje - Java:;:Uvod u OOP paradigmu u programskom jeziku Java:;:5850.54:;:\photos\java.png:;:Vezbe:;:False
+1539950472:;:AI:;:Znacaj AI u modernom svetu:;:15999.99:;:\photos\ai.png:;:Seminar:;:True
+14566:;:Kurs kriminalistike:;:Kako je to biti forenzičar?:;:42000:;:\photos\kriminalistika.jpeg:;:Predavanja:;:False
+23232:;:Kurs programiranja:;:Razni programski jezici:;:6000:;:\photos\programiranje.jpeg:;:Vezbe:;:True
+734723:;:Poslovna ekonomija:;:x:;:4269.99:;:\photos\ekonomija.jpg:;:Seminar:;:True
+75424:;:Kurs industrijske ekologije:;:x:;:1400:;:\photos\industrijska_ekologija.jpeg:;:Praksa:;:False
+57257:;:Kurs engleskog jezika:;:Profesor: Selma Bogičević:;:13600:;:\photos\engleski.jpg:;:Predavanja:;:True
+65452:;:Kurs grafickog dizajna:;:Koristi Photoshop kao profesionalac!:;:12888:;:\photos\GRID.jpeg:;:Vezbe:;:False
+73326:;:Kurs turizma i ugostiteljstvo:;:x:;:1000:;:\photos\turizam_i_ugostiteljstvo.jpeg:;:Seminar:;:True
+828582:;:Kurs bezbednosti i zastite:;:MUP Srbije:;:0:;:\photos\bezbednost_i_zastita.jpeg:;:Praksa:;:False
+596592:;:Skola gitare:;:Osnove gitare (Cena je po jednom casu):;:750:;:\photos\gitaara.jpg:;:Vezbe:;:True
+79546:;:Vezbe za javni nastup:;:Poboljsavanje vestina javnog nastupa:;:20000:;:\photos\vezba-za-javni-nastup1.jpg:;:Vezbe:;:False
+96648:;:Vega IT studentska praksa:;:Namenjeno studentima treće i četvrte godine:;:0:;:\photos\vega.png:;:Praksa:;:False
+345695:;:3Lateral studentska praksa:;:Namenjeno master studentima:;:0:;:\photos\images.png:;:Praksa:;:False
+389764:;:Manikir:;:Sve sto treba da znate o manikiru:;:15000:;:\photos\manikir.jpg:;:Vezbe:;:False
+623979:;:Oriflame:;:Prezentacija nove kolekcije i potraga za novim idejama:;:4000:;:\photos\oriflame.png:;:Seminar:;:True
+33297601:;:Android programiranje:;:Sve sto treba da znate o Android programiranju:;:18999.99:;:\photos\channels4_profile.jpg:;:Predavanja:;:False
+4639846:;:iOS programiranje:;:Napravite aplikacije da vam Steve Jobs zavidi:;:18999.99:;:\photos\ios.jpg:;:Vezbe:;:True
+1402004:;:NAPRAVI SVOJ BEND!:;:Upoznaj druge ucesnike, kolege muzicare:;:1666:;:\photos\band.jpg:;:Seminar:;:True
+3107004:;:Kontrolor izbora:;:Nauci sta se sme, a sta ne na izborima!:;:15000:;:\photos\izbori.jpg:;:Predavanja:;:True
+2708023:;:Ozvucenje na koncertima:;:Obuka za ozvucenje na koncertima:;:13000:;:\photos\ozvucenje.jpg:;:Seminar:;:False
+1009023:;:Konobar:;:Potrebno pojacanje! Javiti se na 019/475-896:;:0:;:\photos\noIcon.png:;:Praksa:;:True
