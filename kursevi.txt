@@ -8,7 +8,7 @@
 16012021:;:Dresura pasa:;:"Ide PAS":;:10000:;:\photos\maks.jpg:;:Vezbe:;:True
 734723:;:Poslovna ekonomija:;:x:;:4269.99:;:\photos\ekonomija.jpg:;:Seminar:;:True
 75424:;:Kurs industrijske ekologije:;:x:;:1400:;:\photos\industrijska_ekologija.jpeg:;:Praksa:;:False
-57257:;:Kurs engleskog jezika:;:Profesor: Selma Bogičević:;:13600:;:\photos\engleski.jpg:;:Predavanja:;:True
+57257:;:Kurs engleskog jezika:;:Profesor: Selma Simić:;:13600:;:\photos\engleski.jpg:;:Predavanja:;:True
 65452:;:Kurs grafickog dizajna:;:Koristi Photoshop kao profesionalac!:;:12888:;:\photos\GRID.jpeg:;:Vezbe:;:False
 73326:;:Kurs turizma i ugostiteljstvo:;:x:;:1000:;:\photos\turizam_i_ugostiteljstvo.jpeg:;:Seminar:;:True
 828582:;:Kurs bezbednosti i zastite:;:MUP Srbije:;:0:;:\photos\bezbednost_i_zastita.jpeg:;:Praksa:;:False
